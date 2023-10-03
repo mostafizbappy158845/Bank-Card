@@ -6,7 +6,7 @@ import { MdOutlineReviews } from "react-icons/md";
 const Selections = () => {
     const [countries, setCountries] = useState([])
     const [selected, setSelected] = useState("");
-    const [inputValue, setInputValue] = useState("");
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         fetch("https://restcountries.com/v2/all?fields=name")
@@ -19,26 +19,33 @@ const Selections = () => {
 
     return (
         <div className='mx-auto w-full px-10 py-5  bg-slate-100'>
-            <div className="wrapper flex justify-between items-center font-semibold">
+            <div className="wrapper flex flex-cols-2   justify-between items-center font-semibold">
                 <div className='w-52 relative'>
-                    <div className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
+                    <div onClick={() => setOpen(!open)} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
                         <p className=''>{selected
                         ? selected?.length > 15
                         ? selected?.substring(0,15)  + "..."
                         : selected 
                         : "Category"}</p>
-                        <p className=''>< AiFillCaretDown size={20} /></p>
+                        <p className=''>< AiFillCaretDown size={20} className={`${open && "rotate-180"}`} /></p>
                     </div>
-                    <ul className='absolute bg-slate-200 w-54 top-10 rounded-sm text-left  max-h-52 overflow-y-auto'>
+                    <ul className={`absolute bg-slate-200 w-54 top-10 rounded-sm text-left overflow-y-auto ${
+                        open ? " max-h-52" : " max-h-0"
+                        }`}>
 
                         {
                             countries.map((country) => (
                                 <li key={country?.name}
-                                 className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2`}
+                                 className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2
+                                 ${ country?.name?.toLowerCase() === selected?.toLowerCase() &&
+                                    "bg-sky-600 text-white"
+                                 }`}
                                  onClick={() =>{
-                                    if(country?.name?.toLowerCase() !== selected.toLowerCase() ){
-                                        setSelected(country.name);
-                                    }
+                                    // if(country?.name?.toLowerCase() !== selected.toLowerCase() ){
+                                    //     setSelected(country.name);
+                                    // }
+                                    setSelected(country.name);
+                                    setOpen(false)
                                  }}
                                  >
                                     {country?.name}
@@ -52,7 +59,8 @@ const Selections = () => {
                     <p className=''>Bank</p>
                     <p className=''><AiFillCaretDown size={20} /></p>
                 </div>
-                <div className='flex items-center justify-between bg-slate-200 rounded-md w-52 text-lg px-2'><p className=''>Review</p>
+                <div className='flex items-center justify-between bg-slate-200 rounded-md w-52 text-lg px-2'>
+                    <p className=''>Review</p>
                     <p><MdOutlineReviews size={20} /></p>
                 </div>
                 <div className='flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'>
