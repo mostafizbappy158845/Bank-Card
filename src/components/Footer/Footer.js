@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer className = "footer py-5 bg-black">
         <div className = "container">
-            <div className = "footer-content text-white grid">
+            <div className = "footer-content flex text-white items-center justify-between mx-4">
                 <div className = "footer-item text-center">
-                    <h6 className = "fs-17 fw-6">Links</h6>
+                    <h6 className = "fs-17 fw-6 text-2xl font-semibold">Links</h6>
                     <ul>
                         <li><a href = "/aboutus" className = "fs-15">About Us</a></li>
                         <li><a href = "/contact" className = "fs-15">Contact Us</a></li>

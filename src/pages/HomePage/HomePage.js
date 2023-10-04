@@ -8,6 +8,7 @@ import ImageBanner from '../../components/ImageBanner/ImageBanner';
 import Review from '../../components/Review/Review';
 import VisitPlaces from '../../components/VisitPlaces/VisitPlaces';
 import Footer from '../../components/Footer/Footer';
+import MainFooter from '../../components/Footer/MainFooter';
 
 const HomePage = () => {
     return (
@@ -16,12 +17,12 @@ const HomePage = () => {
             <Navbar></Navbar>
            <ImageBanner></ImageBanner>
            <Selections></Selections>
-           <Card></Card>
-           <TopBanner></TopBanner>
+           
+           
            <BestDeal></BestDeal>
            <Review></Review>
            <VisitPlaces></VisitPlaces>
-           <Footer></Footer>
+           <MainFooter></MainFooter>
            </div>
         
     );

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { AiFillCaretDown } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { MdOutlineReviews } from "react-icons/md";
+import TopBanner from '../TopBanner/TopBanner';
+import Card from '../Card/Card';
 
 const Selections = () => {
     const [countries, setCountries] = useState([])
@@ -18,6 +20,7 @@ const Selections = () => {
     }, []);
 
     return (
+        <div>
         <div className='mx-auto w-full px-10 py-5  bg-slate-100'>
             <div className="wrapper flex flex-cols-2   justify-between items-center font-semibold">
                 <div className='w-52 relative'>
@@ -35,6 +38,7 @@ const Selections = () => {
 
                         {
                             countries.map((country) => (
+                                
                                 <li key={country?.name}
                                  className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2
                                  ${ country?.name?.toLowerCase() === selected?.toLowerCase() &&
@@ -68,6 +72,11 @@ const Selections = () => {
                     <p><FiSearch size={20}></FiSearch></p>
                 </div>
             </div>
+        </div>
+        
+        
+        <Card></Card>
+        <TopBanner></TopBanner>
         </div>
     );
 };
