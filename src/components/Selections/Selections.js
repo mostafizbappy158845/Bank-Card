@@ -4,20 +4,28 @@ import { FiSearch } from "react-icons/fi";
 import { MdOutlineReviews } from "react-icons/md";
 import TopBanner from '../TopBanner/TopBanner';
 import Card from '../Card/Card';
+import CategoryComponent from '../CategoryComponent/CategoryComponent';
 
 const Selections = () => {
     const [countries, setCountries] = useState([])
     const [selected, setSelected] = useState("");
     const [open, setOpen] = useState(false);
+    const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
-        fetch("https://restcountries.com/v2/all?fields=name")
+        fetch("https://restcountries.com/v2/all") 
+    // ?fields=name
             .then((res) => res.json())
             .then((data) => {
-                // console.log(data)
+                console.log(data)
                 setCountries(data);
             });
     }, []);
+
+    const handleCategorySelect = (cat) => {
+        setSelectedCategory(cat);
+        // setSelectedBank(null);
+      };
 
     return (
         <div>
@@ -25,6 +33,7 @@ const Selections = () => {
             <div className="wrapper flex flex-cols-2   justify-between items-center font-semibold">
                 <div className='w-52 relative'>
                     <div onClick={() => setOpen(!open)} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
+                        
                         <p className=''>{selected
                         ? selected?.length > 15
                         ? selected?.substring(0,15)  + "..."
@@ -50,6 +59,7 @@ const Selections = () => {
                                     // }
                                     setSelected(country.name);
                                     setOpen(false)
+                                    handleCategorySelect(country)
                                  }}
                                  >
                                     {country?.name}
@@ -75,8 +85,12 @@ const Selections = () => {
         </div>
         
         
-        <Card></Card>
+        <Card category={selectedCategory}></Card>
         <TopBanner></TopBanner>
+        <div>
+        {selectedCategory && <CategoryComponent category={selectedCategory} />}
+        {/* {selectedBank && <BankComponent bank={selectedBank} />} */}
+      </div>
         </div>
     );
 };
