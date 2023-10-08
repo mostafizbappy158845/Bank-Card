@@ -5,20 +5,21 @@ import { MdOutlineReviews } from "react-icons/md";
 import TopBanner from '../TopBanner/TopBanner';
 import Card from '../Card/Card';
 import CategoryComponent from '../CategoryComponent/CategoryComponent';
+// import AllInfo from '../../data.json'
 
 const Selections = () => {
-    const [countries, setCountries] = useState([])
+    const [allInfos, setAllInfos] = useState([])
     const [selected, setSelected] = useState("");
     const [open, setOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
 
     useEffect(() => {
-        fetch("https://restcountries.com/v2/all") 
-    // ?fields=name
+        fetch("data.json") 
+    //https://restcountries.com/v2/all?fields=name
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
-                setCountries(data);
+                setAllInfos(data);
             });
     }, []);
 
@@ -46,23 +47,23 @@ const Selections = () => {
                         }`}>
 
                         {
-                            countries.map((country) => (
+                            allInfos.map((alInfo,i) => (
                                 
-                                <li key={country?.name}
+                                <li key={i}
                                  className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2
-                                 ${ country?.name?.toLowerCase() === selected?.toLowerCase() &&
+                                 ${ alInfo?.category?.type.toLowerCase() === selected?.toLowerCase() &&
                                     "bg-sky-600 text-white"
                                  }`}
                                  onClick={() =>{
                                     // if(country?.name?.toLowerCase() !== selected.toLowerCase() ){
                                     //     setSelected(country.name);
                                     // }
-                                    setSelected(country.name);
+                                    setSelected(alInfo.category.type);
                                     setOpen(false)
-                                    handleCategorySelect(country)
+                                    handleCategorySelect(alInfo)
                                  }}
                                  >
-                                    {country?.name}
+                                    {alInfo?.category.type}
                                 </li>
                             ))
                         }
@@ -85,10 +86,10 @@ const Selections = () => {
         </div>
         
         
-        <Card category={selectedCategory}></Card>
+        <Card ></Card>
         <TopBanner></TopBanner>
         <div>
-        {selectedCategory && <CategoryComponent category={selectedCategory} />}
+        {selectedCategory && <CategoryComponent category={allInfos} />}
         {/* {selectedBank && <BankComponent bank={selectedBank} />} */}
       </div>
         </div>

@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "bankfullname": "Mutual Trust Bank",
+    "bankshortname": "MTB",
+    "cardtype": "credit",
+    "typeofcard": "gold",
+    "cardacategory": "visa",
+    "discountdetail": "10%",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": {
+      "type": "Hotel",
+      "nameundertype": "Sheraton",
+      "location": "Shabagh",
+      "city": "Dhaka"
+    }
+  },
+  {
+    "id": 2,
+    "bankfullname": "Jamuna Bank",
+    "bankshortname": "JB",
+    "cardtype": "ATM",
+    "typeofcard": "Platinum",
+    "cardacategory": "visa",
+    "discountdetail": "Buy 1 Get 2",
+    "discountvalidity": "Month of April/ Pahela Baishakh",
+    "specialmesseage": "Your favourite card",
+    "category": {
+      "type": "Restaurant",
+      "nameundertype": "Shalimar",
+      "location": "Paltan",
+      "city": "Dhaka"
+    }
+  },
+  {
+    "id": 3,
+    "bankfullname": "Mutual Trust Bank",
+    "bankshortname": "MTB",
+    "cardtype": "Debit",
+    "typeofcard": "classic",
+    "cardacategory": "visa",
+    "discountdetail": "13%",
+    "discountvalidity": "Month of Oct/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": {
+      "type": "Hotel",
+      "nameundertype": "Le Meridian",
+      "location": "Khilket",
+      "city": "Dhaka"
+    }
+  },
+  {
+    "id": 4,
+    "bankfullname": "Dutch Bangla Bank Ltd",
+    "bankshortname": "DBBL",
+    "cardtype": "credit",
+    "typeofcard": "Platinum",
+    "cardacategory": "Mastercard",
+    "discountdetail": "12%",
+    "discountvalidity": "Month of Dec/ Chirsmarch",
+    "specialmesseage": "Your favourite card",
+    "category": {
+      "type": "Hotel",
+      "nameundertype": "Pan Pacific",
+      "location": "Kawran Bazar",
+      "city": "Dhaka"
+    }
+  }
+]
