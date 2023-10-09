@@ -3,68 +3,76 @@
     "id": 1,
     "bankfullname": "Mutual Trust Bank",
     "bankshortname": "MTB",
-    "cardtype": "credit",
+    "cardtype": "Credit Card",
     "typeofcard": "gold",
     "cardacategory": "visa",
-    "discountdetail": "10%",
+    "discountdetail": "10% OFF",
     "discountvalidity": "Month of July/ Eid ul Adha",
     "specialmesseage": "Your favourite card",
-    "category": {
-      "type": "Hotel",
-      "nameundertype": "Sheraton",
-      "location": "Shabagh",
-      "city": "Dhaka"
-    }
+    "category": "Hotel",  
+    "name": "Sheraton",
+    "location": "Shabagh",
+    "city": "Dhaka"
   },
   {
     "id": 2,
     "bankfullname": "Jamuna Bank",
     "bankshortname": "JB",
-    "cardtype": "ATM",
+    "cardtype": "ATM Card",
     "typeofcard": "Platinum",
-    "cardacategory": "visa",
-    "discountdetail": "Buy 1 Get 2",
+    "cardacategory": "Visa",
+    "discountdetail": "Buy1 Get1 FREE",
     "discountvalidity": "Month of April/ Pahela Baishakh",
     "specialmesseage": "Your favourite card",
-    "category": {
-      "type": "Restaurant",
-      "nameundertype": "Shalimar",
-      "location": "Paltan",
-      "city": "Dhaka"
-    }
+    "category": "Restaurant",  
+    "name": "Shalimar",
+    "location": "Paltan",
+    "city": "Dhaka"
   },
   {
     "id": 3,
     "bankfullname": "Mutual Trust Bank",
     "bankshortname": "MTB",
-    "cardtype": "Debit",
-    "typeofcard": "classic",
-    "cardacategory": "visa",
-    "discountdetail": "13%",
+    "cardtype": "Debit Card",
+    "typeofcard": "Classic",
+    "cardacategory": "Visa",
+    "discountdetail": "13% OFF",
     "discountvalidity": "Month of Oct/ Eid ul Adha",
     "specialmesseage": "Your favourite card",
-    "category": {
-      "type": "Hotel",
-      "nameundertype": "Le Meridian",
-      "location": "Khilket",
-      "city": "Dhaka"
-    }
+    "category": "Hotel",  
+    "name": "Le Meridian",
+    "location": "Khilket",
+    "city": "Dhaka"
   },
   {
     "id": 4,
     "bankfullname": "Dutch Bangla Bank Ltd",
     "bankshortname": "DBBL",
-    "cardtype": "credit",
+    "cardtype": "Credit Card",
     "typeofcard": "Platinum",
     "cardacategory": "Mastercard",
-    "discountdetail": "12%",
+    "discountdetail": "12% OFF",
     "discountvalidity": "Month of Dec/ Chirsmarch",
     "specialmesseage": "Your favourite card",
-    "category": {
-      "type": "Hotel",
-      "nameundertype": "Pan Pacific",
-      "location": "Kawran Bazar",
-      "city": "Dhaka"
-    }
+    "category": "Hotel",  
+    "name": "Pan Pacific",
+    "location": "Kawran Bazar",
+    "city": "Dhaka"
+    
+  },
+  {
+    "id": 5,
+    "bankfullname": "Mutual Trust Bank",
+    "bankshortname": "MTB",
+    "cardtype": "Credit Card",
+    "typeofcard": "Gold",
+    "cardacategory": "Visa",
+    "discountdetail": "10%",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Restaurant",  
+    "name": "Sheraton",
+    "location": "Shabagh",
+    "city": "Dhaka"
   }
 ]
