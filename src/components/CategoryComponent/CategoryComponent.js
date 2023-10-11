@@ -4,6 +4,8 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
 
   // const [first, setfirst] = useState(selected)
   const filteredInfos = allInfos.filter((singleInfo) => singleInfo.category === selected);
+  const doubleFiltered = allInfos.filter((singleInfo)=> singleInfo.category === selected && singleInfo.cardtype===cardSelected)
+  const mainFiltered = cardSelected ? doubleFiltered: filteredInfos
   // const secondFilterInfos = cardSelected === filteredInfos.filter((singleInfo) => singleInfo.cardtype === cardSelected) ? filteredInfos.filter((oneTypeCard) => oneTypeCard.cardtype === cardSelected)
   //   : filteredInfos
   // console.log(singleInfo)
@@ -25,7 +27,7 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
           {/*  singleinfo.filter( singleinfo.category===selected) */}
           {/* allInfos.filter((singleInfo) => singleInfo.category === selected) */}
           {
-            filteredInfos
+            mainFiltered
               .map((singleInfo, i) => (
 
                 <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border border-solid border-amber-500 rounded-md px-3

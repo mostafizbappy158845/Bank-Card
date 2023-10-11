@@ -90,6 +90,7 @@ const Selections = () => {
                                             setSelected(alInfo);
                                             setOpenCat(false)
                                             handleCategorySelect(alInfo)
+                                            setCardSelected("")
                                         }}
                                     >
                                         {alInfo}
