@@ -17,7 +17,7 @@ const Selections = () => {
     const [openBank, setOpenBank] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedBank, setSelectedBank] = useState(null);
-    // const [cardSelected, setCardSelected] = useState(null);
+    const [cardSelected, setCardSelected] = useState(null);
 
     const uniqueCards = [...new Set(allInfos.map(item => item.cardtype))];
     const uniqueCategorys = [...new Set(allInfos.map(item => item.category))];
@@ -51,9 +51,10 @@ const Selections = () => {
     //     // setSelectedBank(null);
     // };
 
-    // const filterCards = (types) => {
-    //     const newItems = allInfos.filter((newval) => newval.cardtype === types)
-    //     setItems(newItems)
+    // const filterCards = (type) => {
+    //     setCardSelected(type);
+    //     //const newItems = allInfos.filter((newval) => newval.cardtype === types)
+    //     //setItems(newItems)
     // }
 
     return (
@@ -155,7 +156,7 @@ const Selections = () => {
                     <div className="card-grp flex items-center justify-center  font-medium ">
                         {uniqueCards.map((card, i) => (
                             <button key={i}
-                            //  onClick={() => filterCards(card)}
+                             onClick={() => setCardSelected(card)}
                                 className='border-2  rounded-md p-4 bg-[#9EDDFF] hover:bg-[#6499E9]'>{card}</button>
                         ))}
                     </div>
@@ -163,7 +164,7 @@ const Selections = () => {
             </div>
             <TopBanner></TopBanner>
             <div>
-                {selectedCategory && <CategoryComponent allInfos={allInfos} selected={selected} />}
+                {selectedCategory && <CategoryComponent allInfos={allInfos} selected={selected} cardSelected={cardSelected} />}
                 {selectedBank && <BankComponent allInfos={allInfos}  selected={bankname} />}
             </div>
         </div>
