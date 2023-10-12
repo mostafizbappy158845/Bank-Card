@@ -74,5 +74,50 @@
     "name": "KFC",
     "location": "Shabagh",
     "city": "Dhaka"
+  },
+  {
+    "id": 6,
+    "bankfullname": "Islamic Bank",
+    "bankshortname": "IB",
+    "cardtype": "Credit Card",
+    "typeofcard": "Gold",
+    "cardcategory": "Visa",
+    "discountdetail": "12% OFF",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Restaurant",  
+    "name": "BFC",
+    "location": "Mirpur",
+    "city": "Dhaka"
+  },
+  {
+    "id": 7,
+    "bankfullname": "Trust Bank",
+    "bankshortname": "TB",
+    "cardtype": "Credit Card",
+    "typeofcard": "Platinum",
+    "cardcategory": "Visa",
+    "discountdetail": "10% OFF",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Hotel",  
+    "name": "Continental",
+    "location": "Kawran Bazar",
+    "city": "Dhaka"
+  },
+  {
+    "id": 8,
+    "bankfullname": "Brac Bank",
+    "bankshortname": "BB",
+    "cardtype": "Debit Card",
+    "typeofcard": "Gold",
+    "cardcategory": "Visa",
+    "discountdetail": "10% OFF",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Restaurant",  
+    "name": "Khanaz",
+    "location": "Dhanmondi",
+    "city": "Dhaka"
   }
 ]

@@ -12,35 +12,35 @@ const BestDeal = () => {
         <div className="left-seection w-4/5 grid grid-cols-2 gap-4 px-4">
           {/* Create a 3x3 grid of information */}
           <div className="info-item flex  border border-solid border-amber-500 rounded-md px-3
-                      bg-red-100">
+                      bg-violet-100">
             <div className='text-4xl font-serif font-bold tracking-wide pt-14 mr-8 uppercase'>pearl <br /> Hotel</div>
             <div className='font-medium pt-10 text-justify'>Enjoy <span className='font-bold'>Discount</span> & <br /> <span className='font-bold'>Exciting Deals</span> <br /><span className='flex flex-wrap'>with your MTB Credit Card</span> <p></p> </div>
             <div className='font-medium ml-8 pt-10'> <span className='text-red-500 font-bold uppercase text-xl'>MTB</span> & <span className='text-blue-800 font-bold uppercase text-xl'>visa</span> only</div>
           </div>
           <div className="info-item flex  border border-solid border-amber-500 rounded-md px-3
-                      bg-red-100">
+                      bg-violet-100">
             <div className='text-4xl font-serif font-bold tracking-wide pt-14 mr-8 uppercase'>pearl <br /> Hotel</div>
             <div className='font-medium pt-10 text-justify'>Enjoy <span className='font-bold'>Discount</span> & <br /> <span className='font-bold'>Exciting Deals</span> <br /><span className='flex flex-wrap'>with your MTB Credit Card</span> <p></p> </div>
             <div className='font-medium ml-8 pt-10'> <span className='text-red-500 font-bold uppercase text-xl'>MTB</span> & <span className='text-blue-800 font-bold uppercase text-xl'>visa</span> only</div>
           </div><div className="info-item flex  border border-solid border-amber-500 rounded-md px-3
-                      bg-red-100">
+                      bg-violet-100">
             <div className='text-4xl font-serif font-bold tracking-wide pt-14 mr-8 uppercase'>pearl <br /> Hotel</div>
             <div className='font-medium pt-10 text-justify'>Enjoy <span className='font-bold'>Discount</span> & <br /> <span className='font-bold'>Exciting Deals</span> <br /><span className='flex flex-wrap'>with your MTB Credit Card</span> <p></p> </div>
             <div className='font-medium ml-8 pt-10'> <span className='text-red-500 font-bold uppercase text-xl'>MTB</span> & <span className='text-blue-800 font-bold uppercase text-xl'>visa</span> only</div>
           </div><div className="info-item flex  border border-solid border-amber-500 rounded-md px-3
-                      bg-red-100">
+                      bg-violet-100">
             <div className='text-4xl font-serif font-bold tracking-wide pt-14 mr-8 uppercase'>pearl <br /> Hotel</div>
             <div className='font-medium pt-10 text-justify'>Enjoy <span className='font-bold'>Discount</span> & <br /> <span className='font-bold'>Exciting Deals</span> <br /><span className='flex flex-wrap'>with your MTB Credit Card</span> <p></p> </div>
             <div className='font-medium ml-8 pt-10'> <span className='text-red-500 font-bold uppercase text-xl'>MTB</span> & <span className='text-blue-800 font-bold uppercase text-xl'>visa</span> only</div>
           </div>
           <div className="info-item flex  border border-solid border-amber-500 rounded-md px-3
-                      bg-red-100">
+                      bg-violet-100">
             <div className='text-4xl font-serif font-bold tracking-wide pt-14 mr-8 uppercase'>pearl <br /> Hotel</div>
             <div className='font-medium pt-10 text-justify'>Enjoy <span className='font-bold'>Discount</span> & <br /> <span className='font-bold'>Exciting Deals</span> <br /><span className='flex flex-wrap'>with your MTB Credit Card</span> <p></p> </div>
             <div className='font-medium ml-8 pt-10'> <span className='text-red-500 font-bold uppercase text-xl'>MTB</span> & <span className='text-blue-800 font-bold uppercase text-xl'>visa</span> only</div>
           </div>
           <div className="info-item flex  border border-solid border-amber-500 rounded-md px-3
-                      bg-red-100">
+                      bg-violet-100">
             <div className='text-4xl font-serif font-bold tracking-wide pt-14 mr-8 uppercase'>pearl <br /> Hotel</div>
             <div className='font-medium pt-10 text-justify'>Enjoy <span className='font-bold'>Discount</span> & <br /> <span className='font-bold'>Exciting Deals</span> <br /><span className='flex flex-wrap'>with your MTB Credit Card</span> <p></p> </div>
             <div className='font-medium ml-8 pt-10'> <span className='text-red-500 font-bold uppercase text-xl'>MTB</span> & <span className='text-blue-800 font-bold uppercase text-xl'>visa</span> only</div>

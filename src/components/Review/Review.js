@@ -9,7 +9,7 @@ import { Pagination } from "swiper/modules";
 import avatar from "../../assets/images/avatar.png";
 const Review = () => {
   return (
-    <section className="text-center mt-8 mx-4">
+    <section id="rvw" className="text-center mt-8 mx-4">
       <p className="text-primary text-2xl text-rose-600 font-mono">Happy Clients</p>
       <h1 className="md:text-4xl text-2xl mt-1 font-semibold font-mono">
         Client's Say About Us

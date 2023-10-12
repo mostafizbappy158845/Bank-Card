@@ -6,6 +6,8 @@ import TopBanner from '../TopBanner/TopBanner';
 import Card from '../Card/Card';
 import CategoryComponent from '../CategoryComponent/CategoryComponent';
 import BankComponent from '../BankComponent/BankComponent';
+import VisitPlaces from '../VisitPlaces/VisitPlaces';
+import HotOffer from '../HotOffer/HotOffer';
 // import AllInfo from '../../data.json'
 
 const Selections = () => {
@@ -46,6 +48,7 @@ const Selections = () => {
         
 
     };
+    const anySelect = selectedCategory || selectedBank;
     // const handleSelectedCard = (type) => {
     //     setCardSelected(type);
     //     // setSelectedBank(null);
@@ -79,7 +82,7 @@ const Selections = () => {
                                 uniqueCategorys.map((alInfo, i) => (
                                     // Bappy is okkkkk
                                     <li key={i}
-                                        className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2
+                                        className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2 py-2
                                  ${alInfo?.toLowerCase() === selected?.toLowerCase() &&
                                             "bg-sky-600 text-white"
                                             }`}
@@ -110,7 +113,7 @@ const Selections = () => {
                                 : "Bank"}</p>
                             <p className=''>< AiFillCaretDown size={20} className={`${openBank && "rotate-180"}`} /></p>
                         </div>
-                        <ul className={`absolute bg-slate-200 w-54 top-10 rounded-sm text-left overflow-y-auto ${openBank ? " max-h-52" : " max-h-0"
+                        <ul className={`absolute bg-slate-200 w-54 top-10 rounded-sm text-left overflow-y-auto ${openBank ? "z-20 max-h-52 pt-0" : " max-h-0"
                             }`}>
 
                             {
@@ -118,7 +121,7 @@ const Selections = () => {
                                 uniqueBank.map((alInfo, i) => (
                                     // Bappy is okkkkk
                                     <li key={i}
-                                        className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2
+                                        className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-4 py-2
                                  ${alInfo?.toLowerCase() === bankname?.toLowerCase() &&
                                             "bg-sky-600 text-white"
                                             }`}
@@ -126,6 +129,7 @@ const Selections = () => {
                                             setBankname(alInfo);
                                             setOpenBank(false)
                                             handleBankSelect(alInfo)
+                                            setCardSelected("")
                                         }}
                                     >
                                         {alInfo}
@@ -140,13 +144,15 @@ const Selections = () => {
                         <p className=''><AiFillCaretDown size={20} /></p>
                     </div> */}
                     <div className='flex items-center justify-between bg-slate-200 rounded-md w-52 text-lg px-2'>
-                        <p className=''>Review</p>
-                        <p><MdOutlineReviews size={20} /></p>
+                    <a href="#rvw"><p className=''>Review</p></a>
+                    <a href="#rvw"><MdOutlineReviews size={20}></MdOutlineReviews></a>
+                        
                     </div>
-                    <div className='flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'>
+                    <div  className='flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'>
                         <p className=''>Search</p>
                         <p><FiSearch size={20}></FiSearch></p>
                     </div>
+                    
                 </div>
             </div>
 
@@ -164,10 +170,12 @@ const Selections = () => {
                 </div>
             </div>
             <TopBanner></TopBanner>
-            <div>
+            
+            
+                
                 {selectedCategory && <CategoryComponent allInfos={allInfos} selected={selected} cardSelected={cardSelected} />}
-                {selectedBank && <BankComponent allInfos={allInfos}  selected={bankname} />}
-            </div>
+                {selectedBank && <BankComponent allInfos={allInfos}  selected={bankname} cardSelected={cardSelected}/>}
+                {!anySelect && <HotOffer/>}
         </div>
     );
 };

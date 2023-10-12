@@ -5,7 +5,7 @@ const HotOffer = () => {
   return (
     <div>
             <div className='mt-14 mx-4'>
-                <p className=' texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex flex-start  mt-4 capitalize'>places you should visit</p>
+                <p className=' texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex flex-start  mt-4 uppercase text-rose-500'>Hot offer</p>
                 <hr className='my-4 w-32 h-1 bg-gray-500 ' />
             </div>
             <div className='main-part flex flex-col lg:flex-row min-h-[500px]'>
