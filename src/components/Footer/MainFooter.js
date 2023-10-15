@@ -5,7 +5,7 @@ import { Icons } from './Menus';
 
 const MainFooter = () => {
     return (
-        <div className=' bg-black text-white'>
+        <div className=' bg-black text-white mt-5'>
             
 
             <ItemsContainer></ItemsContainer>

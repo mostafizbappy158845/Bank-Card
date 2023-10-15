@@ -3,10 +3,8 @@ import { AiFillCaretDown } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { MdOutlineReviews } from "react-icons/md";
 import TopBanner from '../TopBanner/TopBanner';
-import Card from '../Card/Card';
 import CategoryComponent from '../CategoryComponent/CategoryComponent';
 import BankComponent from '../BankComponent/BankComponent';
-import VisitPlaces from '../VisitPlaces/VisitPlaces';
 import HotOffer from '../HotOffer/HotOffer';
 // import AllInfo from '../../data.json'
 
@@ -37,8 +35,9 @@ const Selections = () => {
 
     const handleCategorySelect = (cat) => {
         setSelectedCategory(cat);
-        setSelectedBank(null);
         setBankname("")
+        setSelectedBank(null);
+        
         
     };
     const handleBankSelect = (cat) => {
@@ -49,22 +48,12 @@ const Selections = () => {
 
     };
     const anySelect = selectedCategory || selectedBank;
-    // const handleSelectedCard = (type) => {
-    //     setCardSelected(type);
-    //     // setSelectedBank(null);
-    // };
-
-    // const filterCards = (type) => {
-    //     setCardSelected(type);
-    //     //const newItems = allInfos.filter((newval) => newval.cardtype === types)
-    //     //setItems(newItems)
-    // }
-
+    
     return (
         <div>
             <div className='mx-auto w-full px-10 py-5  bg-slate-100'>
-                <div className="wrapper flex flex-cols-2   justify-between items-center font-semibold">
-                    <div className='w-52 relative'>
+                <div className="wrapper flex flex-col md:flex-row   justify-between items-center font-semibold">
+                    <div className='w-52 relative mb-5 '>
                         <div onClick={() => setOpenCat(!openCat)} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
 
                             <p className=''>{selected
@@ -74,13 +63,13 @@ const Selections = () => {
                                 : "Category"}</p>
                             <p className=''>< AiFillCaretDown size={20} className={`${openCat && "rotate-180"}`} /></p>
                         </div>
-                        <ul className={`absolute bg-slate-200 w-54 top-10 rounded-sm text-left overflow-y-auto ${openCat ? " max-h-52" : " max-h-0"
+                        <ul className={`absolute bg-slate-200 w-54 top-10 rounded-sm text-left overflow-y-auto ${openCat ? " z-20 max-h-52 pt-0" : " max-h-0"
                             }`}>
 
                             {
                                 //  allInfos.map((alInfo, i) => (
                                 uniqueCategorys.map((alInfo, i) => (
-                                    // Bappy is okkkkk
+                                    
                                     <li key={i}
                                         className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2 py-2
                                  ${alInfo?.toLowerCase() === selected?.toLowerCase() &&
@@ -103,7 +92,7 @@ const Selections = () => {
                         </ul>
 
                     </div>
-                    <div className='w-52 relative'>
+                    <div className='w-52 relative mb-5 '>
                         <div onClick={() => setOpenBank(!openBank)} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!bankname && "text-gray-600"}`}>
 
                             <p className=''>{bankname
@@ -143,15 +132,16 @@ const Selections = () => {
                         <p className=''>Bank</p>
                         <p className=''><AiFillCaretDown size={20} /></p>
                     </div> */}
-                    <div className='flex items-center justify-between bg-slate-200 rounded-md w-52 text-lg px-2'>
+                    <div className='mb-5  flex items-center justify-between bg-slate-200 rounded-md w-52 text-lg px-2'>
                     <a href="#rvw"><p className=''>Review</p></a>
                     <a href="#rvw"><MdOutlineReviews size={20}></MdOutlineReviews></a>
                         
                     </div>
-                    <div  className='flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'>
-                        <p className=''>Search</p>
-                        <p><FiSearch size={20}></FiSearch></p>
-                    </div>
+                    {/* <div  className='mb-5  flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'> */}
+                        {/* <p className=''>Search</p>
+                        <p><FiSearch size={20}></FiSearch></p> */}
+                        <input type="text" placeholder='Search' className=' mb-5 text-lg bg-slate-200 rounded-md w-52 px-2'/>
+                    {/* </div> */}
                     
                 </div>
             </div>
@@ -160,7 +150,7 @@ const Selections = () => {
             {/* <Card allCards={allInfos} handleCard = {}></Card> */}
             <div className=' bg-[#eeeded] pt-4'>
                 <div className="wrapper">
-                    <div className="card-grp flex items-center justify-center  font-medium ">
+                    <div className="card-grp flex flex-col md:flex-row items-center gap-10 justify-center  font-medium ">
                         {uniqueCards.map((card, i) => (
                             <button key={i}
                              onClick={() => setCardSelected(card)}
