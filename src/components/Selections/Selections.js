@@ -52,7 +52,8 @@ const Selections = () => {
     return (
         <div>
             <div className='mx-auto w-full px-10 py-5  bg-slate-100'>
-                <div className="wrapper flex flex-col md:flex-row   justify-between items-center font-semibold">
+                {/* flex flex-col md:flex-cols-2 lg:flex-row   justify-between items-center */}
+                <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-semibold">
                     <div className='w-52 relative mb-5 '>
                         <div onClick={() => setOpenCat(!openCat)} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
 
@@ -140,7 +141,9 @@ const Selections = () => {
                     {/* <div  className='mb-5  flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'> */}
                         {/* <p className=''>Search</p>
                         <p><FiSearch size={20}></FiSearch></p> */}
+                       <div> 
                         <input type="text" placeholder='Search' className=' mb-5 text-lg bg-slate-200 rounded-md w-52 px-2'/>
+                       </div>
                     {/* </div> */}
                     
                 </div>
@@ -150,7 +153,7 @@ const Selections = () => {
             {/* <Card allCards={allInfos} handleCard = {}></Card> */}
             <div className=' bg-[#eeeded] pt-4'>
                 <div className="wrapper">
-                    <div className="card-grp flex flex-col md:flex-row items-center gap-10 justify-center  font-medium ">
+                    <div className="card-grp flex flex-col sm:flex-row items-center gap-10 justify-center  font-medium ">
                         {uniqueCards.map((card, i) => (
                             <button key={i}
                              onClick={() => setCardSelected(card)}

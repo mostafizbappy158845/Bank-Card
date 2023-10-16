@@ -18,8 +18,8 @@ const BankComponent = ({ allInfos, selected, filterCards,cardSelected }) => {
 
       </div>
       <hr className='m-4 w-32 h-1 bg-gray-500 ' />
-      <div className='main-part flex  lg:flex-row '>
-        <div className="left-seection w-4/5 grid grid-cols-1 h-52 md:grid-cols-2  gap-4 px-4">
+      <div className='main-part flex flex-col  lg:flex-row '>
+        <div className="left-seection h-fit w-full md:w-4/5 grid grid-cols-1 md:grid-cols-2  gap-4 px-4">
           {/* Create a 3x3 grid of information */}
           {/*  singleinfo.filter( singleinfo.category===selected) */}
           {/* allInfos.filter((singleInfo) => singleInfo.bankfullname === selected) */}
@@ -29,7 +29,7 @@ const BankComponent = ({ allInfos, selected, filterCards,cardSelected }) => {
               <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border border-solid border-amber-500 rounded-md px-3
               bg-[#9EDDFF] hover:bg-[#6499E9]">
                 <div className='text-lg md:text-xl lg:text-2xl font-serif font-semibold md:font-bold lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.bankshortname} <br />OFFER!!</div>
-                <div className='font-medium  text-justify'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span> <br /><span className=''>& Exciting Deals</span> <br /> with your<span className=''> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
+                <div className='font-medium '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span> <br /><span className=''>& Exciting Deals</span> <br /> with your<span className=''> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
                 <div className='font-medium  lg:ml-8 '> <span className='text-red-500 font-bold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-bold uppercase text-xl'>{singleInfo.cardcategory}</span></div>
               </div>
 
@@ -39,7 +39,7 @@ const BankComponent = ({ allInfos, selected, filterCards,cardSelected }) => {
           {/*  */}
 
         </div>
-        <div className="right-section min-h-[500px] w-full lg:w-1/5 flex items-center justify-center border border-amber-500 rounded-xl">
+        <div className="right-section px-4 mt-4 lg:mt-0  md:w-1/4 w-full lg:w-1/5 flex items-center justify-center">
 
           {/* Display your image here */}
           <img className='w-full h-full object-cover' src={vertical_banner2} alt="vertical-banner" />

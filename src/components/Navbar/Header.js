@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { Link } from "react-router-dom";
+import aamra from '../../assets/images/aamra2-removebg-preview.png'
 
 import { useState } from "react";
+import { AiOutlineClose, AiOutlineMenu, AiOutlineShoppingCart } from 'react-icons/ai';
 function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -25,8 +27,9 @@ useEffect(() => {
       <div className="max-w-[1400px] mx-auto p-4 flex items-center justify-between">
       {/* left */}
       <div>
-        {/* <img src={logo} alt="" /> */}<Link to='/'>
-        <h1 className='text-3xl font-bold text-[#f8931f] uppercase cursor-pointer'>E-Commerce</h1>
+        <Link to='/'>
+        {/* <h1 className='text-3xl font-bold text-[#f8931f] uppercase cursor-pointer'>E-Commerce</h1> */}
+        <div className='h-12'><img src={aamra} alt="" className='object-fit h-full w-full' /></div>
         </Link>
       </div>
       <div className="cursor-pointer md:hidden" onClick={() => setOpen(!open)}>
