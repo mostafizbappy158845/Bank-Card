@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import aamra from '../../assets/images/aamra2-removebg-preview.png'
 
 import { useState } from "react";
-import { AiOutlineClose, AiOutlineMenu, AiOutlineShoppingCart } from 'react-icons/ai';
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -27,10 +27,9 @@ useEffect(() => {
       <div className="max-w-[1400px] mx-auto p-4 flex items-center justify-between">
       {/* left */}
       <div>
-        <Link to='/'>
-        {/* <h1 className='text-3xl font-bold text-[#f8931f] uppercase cursor-pointer'>E-Commerce</h1> */}
-        <div className='h-12'><img src={aamra} alt="" className='object-fit h-full w-full' /></div>
-        </Link>
+        <NavLink to='/'>
+        <div className='h-12'><img src={aamra} alt="" className=' h-full w-full' /></div>
+        </NavLink>
       </div>
       <div className="cursor-pointer md:hidden" onClick={() => setOpen(!open)}>
         
@@ -40,37 +39,33 @@ useEffect(() => {
 
       {/* desktop menu */}
       <div className=" items-center mb-2  space-x-10 hidden md:flex">
-        <Link to="/" className='p-2 rounded-md hover:bg-orange-400 hover:text-white '>Home</Link>
-        <Link to="/products"  className='p-2 rounded-md hover:bg-orange-400 hover:text-white '>Products</Link>
+        <NavLink to="/" className='p-2 rounded-md hover:bg-blue-400 hover:text-white '>Home</NavLink>
+        <NavLink to="/carrer"  className='p-2 rounded-md hover:bg-blue-400 hover:text-white '>Carrer</NavLink>
         
         
-        <Link to="/singleProduct" className='p-2 rounded-md hover:bg-orange-400 hover:text-white'>
-        {/* <AiOutlineSearch size={25} className="w-6 " />*/}
-        SingleProduct</Link> 
-        <Link to="/about"  className='p-2 rounded-md hover:bg-orange-400 hover:text-white '>About </Link>
-    
-        {/* dark mode toggle */}
+        <NavLink to="/contactus" className='p-2 rounded-md hover:bg-blue-400 hover:text-white'>
        
-        <Link to="/cart" className='p-2 rounded-md hover:bg-orange-400 hover:text-white'> <AiOutlineShoppingCart size={25} className="w-7 cursor-pointer" />
-        </Link>
+        ContactUs</NavLink> 
+        <NavLink to="/about"  className='p-2 rounded-md hover:bg-blue-400 hover:text-white '>About </NavLink>
+    
+        
+       
+        <NavLink to="/login" className='p-2 rounded-md hover:bg-blue-400 hover:text-white'>Login
+        </NavLink>
       </div>
 
       {/* mobile menu */}
       <div
-        className={`z-10  items-center space-y-10 flex md:hidden flex-col absolute left-0 top-16 h-screen w-screen bg-white
+        className={`z-10  items-center space-y-10 flex md:hidden flex-col absolute left-0 top-20 h-screen w-screen bg-white
           shadow-lg pt-4  ${open ? "flex" : "hidden"}
         `}
       >
-        <Link to="/" onClick={() =>setOpen(false)}>Home</Link>
+        <NavLink to="/" onClick={() =>setOpen(false)}>Home</NavLink>
         
-        <Link to="/products" onClick={() =>setOpen(false)}>Products</Link>
-        <Link to="/singleProduct" onClick={() =>setOpen(false)}>
-          {/* <AiOutlineSearch size={25} className="w-6" /> */}
-        SingleProduct
-        </Link>
-        <Link to="/about" onClick={() =>setOpen(false)}>About </Link>
-        {/* <SunIcon  className="w-7" /> */}
-        <Link to="/cart" onClick={() =>setOpen(false)}><AiOutlineShoppingCart size={25} className="w-7" /></Link>
+        <NavLink to="/carrer" onClick={() =>setOpen(false)}>Carrer</NavLink>
+        <NavLink to="/contactus" onClick={() =>setOpen(false)}>ContactUs</NavLink>
+        <NavLink to="/about" onClick={() =>setOpen(false)}>About </NavLink>
+        <NavLink to="/login" onClick={() =>setOpen(false)}>Login</NavLink>
       </div>
     </div>
     </div>

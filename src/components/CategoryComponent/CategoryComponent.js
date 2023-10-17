@@ -25,13 +25,13 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
         <div className="left-seection h-fit w-full md:w-2/3 lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-4 px-4">
           {/* Create a 3x3 grid of information */}
           {/*  singleinfo.filter( singleinfo.category===selected) */}
-          {/* allInfos.filter((singleInfo) => singleInfo.category === selected) */}
+          {/* allInfos.filter((singleInfo) => singleInfo.category === selected) #6499E9*/}
           {
             mainFiltered
               .map((singleInfo, i) => (
 
                 <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border border-solid border-amber-500 rounded-md px-3
-              bg-[#9EDDFF] hover:bg-[#6499E9] text-center lg:text-justify">
+              bg-[#9EDDFF] hover:bg-[#6499E9] hover:text-fuchsia-700 text-center lg:text-justify">
                   <div className='text-lg md:text-xl lg:text-2xl font-serif font-semibold md:font-bold lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} <br />{singleInfo.category}</div>
                   <div className='font-medium  '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span> <p></p></div>
                   <div className='font-medium  lg:ml-8 '> <span className='text-red-500 font-bold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-bold uppercase text-xl'>{singleInfo.cardcategory}</span></div>
