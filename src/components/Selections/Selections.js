@@ -44,6 +44,7 @@ const Selections = () => {
         setSelectedBank(cat);
         setSelected("")
         setSelectedCategory(null);
+        // localStorage.setItem(cat);
         
 
     };

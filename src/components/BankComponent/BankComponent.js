@@ -29,8 +29,8 @@ const BankComponent = ({ allInfos, selected, filterCards,cardSelected }) => {
               <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border border-solid border-amber-500 rounded-md px-3
               bg-[#9EDDFF] hover:bg-[#6499E9]">
                 <div className='text-lg md:text-xl lg:text-2xl font-serif font-semibold md:font-bold lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase  text-center'>{singleInfo.bankshortname} <br />OFFER!!</div>
-                <div className='font-medium '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span> <br /><span className=''>& Exciting Deals</span> <br /> with your<span className=''> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
-                <div className='font-medium  lg:ml-8 '> <span className='text-red-500 font-bold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-bold uppercase text-xl'>{singleInfo.cardcategory}</span></div>
+                <div className='font-medium text-center lg:text-justify'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span> <br /><span className=''>& Exciting Deals</span> <br /> with your<span className=''> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
+                <div className='font-medium  lg:ml-8 text-center lg:text-end'> <span className='text-red-500 font-bold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-bold uppercase text-xl'>{singleInfo.cardcategory}</span></div>
               </div>
 
 
