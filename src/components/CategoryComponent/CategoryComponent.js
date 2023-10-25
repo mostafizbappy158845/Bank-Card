@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import vertical_banner2 from '../../assets/images/vertical_banner.svg'
 const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) => {
 
@@ -31,7 +30,7 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
               .map((singleInfo, i) => (
                 //bg-[#6499E9] bg-[#9EDDFF]
                 <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border rounded-md px-3
-                shadow-lg transform hover:scale-105 duration-300 delay-150  transition  text-center lg:text-justify">
+                shadow-lg transform hover:scale-105 duration-300 delay-150  transition  text-center lg:text-left">
                   <div className='text-lg  md:text-xl lg:text-2xl font-serif font-semibold md:font-bold lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} <br />{singleInfo.category}</div>
                   <div className='font-medium  '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span> <p></p></div>
                   <div className='font-medium  lg:ml-8 text-center'> <span className='text-red-500 font-bold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-bold uppercase text-xl'>{singleInfo.cardcategory}</span></div>

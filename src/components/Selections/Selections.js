@@ -6,6 +6,7 @@ import TopBanner from '../TopBanner/TopBanner';
 import CategoryComponent from '../CategoryComponent/CategoryComponent';
 import BankComponent from '../BankComponent/BankComponent';
 import HotOffer from '../HotOffer/HotOffer';
+import SearchComponent from '../SearchComponent/SearchComponent';
 // import AllInfo from '../../data.json'
 
 const Selections = () => {
@@ -18,6 +19,8 @@ const Selections = () => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedBank, setSelectedBank] = useState(null);
     const [cardSelected, setCardSelected] = useState(null);
+    //---//
+    const [searchInput, setSearchInput] = useState("");
 
     const uniqueCards = [...new Set(allInfos.map(item => item.cardtype))];
     const uniqueCategorys = [...new Set(allInfos.map(item => item.category))];
@@ -37,18 +40,14 @@ const Selections = () => {
         setSelectedCategory(cat);
         setBankname("")
         setSelectedBank(null);
-        
-        
-    };
+        };
     const handleBankSelect = (cat) => {
         setSelectedBank(cat);
         setSelected("")
         setSelectedCategory(null);
         // localStorage.setItem(cat);
-        
-
-    };
-    const anySelect = selectedCategory || selectedBank;
+        };
+    const anySelect = selectedCategory || selectedBank || searchInput;
     
     return (
         <div>
@@ -143,7 +142,9 @@ const Selections = () => {
                         {/* <p className=''>Search</p>
                         <p><FiSearch size={20}></FiSearch></p> */}
                        <div> 
-                        <input type="text" placeholder='Search' className=' mb-5 text-lg bg-slate-200 rounded-md w-52 px-2'/>
+                        <input type="text" placeholder='Search' className=' mb-5 text-lg bg-slate-200 rounded-md w-52 px-2'
+                        onChange={(e) => setSearchInput(e.target.value)}
+                        />
                        </div>
                     {/* </div> */}
                     
@@ -169,6 +170,8 @@ const Selections = () => {
                 
                 {selectedCategory && <CategoryComponent allInfos={allInfos} selected={selected} cardSelected={cardSelected} />}
                 {selectedBank && <BankComponent allInfos={allInfos}  selected={bankname} cardSelected={cardSelected}/>}
+                {searchInput && <SearchComponent allInfos={allInfos} searchInput={searchInput}/>}
+
                 {!anySelect && <HotOffer/>}
         </div>
     );
