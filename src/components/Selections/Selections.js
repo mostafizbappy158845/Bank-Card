@@ -40,11 +40,13 @@ const Selections = () => {
         setSelectedCategory(cat);
         setBankname("")
         setSelectedBank(null);
+        setSearchInput(null)
         };
     const handleBankSelect = (cat) => {
         setSelectedBank(cat);
         setSelected("")
         setSelectedCategory(null);
+        setSearchInput(null)
         // localStorage.setItem(cat);
         };
     const anySelect = selectedCategory || selectedBank || searchInput;
@@ -84,6 +86,7 @@ const Selections = () => {
                                             setOpenCat(false)
                                             handleCategorySelect(alInfo)
                                             setCardSelected("")
+                                            setSearchInput("")
                                         }}
                                     >
                                         {alInfo}
@@ -120,6 +123,7 @@ const Selections = () => {
                                             setOpenBank(false)
                                             handleBankSelect(alInfo)
                                             setCardSelected("")
+                                            setSearchInput("")
                                         }}
                                     >
                                         {alInfo}
@@ -142,8 +146,15 @@ const Selections = () => {
                         {/* <p className=''>Search</p>
                         <p><FiSearch size={20}></FiSearch></p> */}
                        <div> 
-                        <input type="text" placeholder='Search' className=' mb-5 text-lg bg-slate-200 rounded-md w-52 px-2'
-                        onChange={(e) => setSearchInput(e.target.value)}
+                        <input type="text" value={searchInput} placeholder='Search...' className=' mb-5 text-lg bg-slate-200 rounded-md w-52 px-2'
+                        onChange={(e) => {
+                            setSearchInput(e.target.value)
+                            setCardSelected("")
+                            setBankname("")
+                            setSelected("")
+                            setSelectedBank(null);
+                            setSelectedCategory(null);
+                        }}
                         />
                        </div>
                     {/* </div> */}
@@ -170,7 +181,7 @@ const Selections = () => {
                 
                 {selectedCategory && <CategoryComponent allInfos={allInfos} selected={selected} cardSelected={cardSelected} />}
                 {selectedBank && <BankComponent allInfos={allInfos}  selected={bankname} cardSelected={cardSelected}/>}
-                {searchInput && <SearchComponent allInfos={allInfos} searchInput={searchInput}/>}
+                {searchInput && <SearchComponent allInfos={allInfos} searchInput={searchInput} cardSelected={cardSelected}/>}
 
                 {!anySelect && <HotOffer/>}
         </div>
