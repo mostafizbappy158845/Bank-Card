@@ -21,6 +21,7 @@ const Selections = () => {
     const [cardSelected, setCardSelected] = useState(null);
     //---//
     const [searchInput, setSearchInput] = useState("");
+    const [activeCard, setActiveCard] = useState(null);
 
     const uniqueCards = [...new Set(allInfos.map(item => item.cardtype))];
     const uniqueCategorys = [...new Set(allInfos.map(item => item.category))];
@@ -41,14 +42,20 @@ const Selections = () => {
         setBankname("")
         setSelectedBank(null);
         setSearchInput(null)
+        setActiveCard(null);
         };
     const handleBankSelect = (cat) => {
         setSelectedBank(cat);
         setSelected("")
         setSelectedCategory(null);
         setSearchInput(null)
+        setActiveCard(null);
         // localStorage.setItem(cat);
         };
+    const handleCardSelected = (card) =>{
+        setCardSelected(card);
+        setActiveCard(card);
+    }    
     const anySelect = selectedCategory || selectedBank || searchInput;
     
     return (
@@ -57,7 +64,10 @@ const Selections = () => {
                 {/* flex flex-col md:flex-cols-2 lg:flex-row   justify-between items-center */}
                 <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-semibold">
                     <div className='w-52 relative mb-5 '>
-                        <div onClick={() => setOpenCat(!openCat)} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
+                        <div onClick={() => {
+                            setOpenCat(!openCat)
+                            setOpenBank(false)
+                        }} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
 
                             <p className=''>{selected
                                 ? selected?.length > 15
@@ -97,7 +107,10 @@ const Selections = () => {
 
                     </div>
                     <div className='w-52 relative mb-5 '>
-                        <div onClick={() => setOpenBank(!openBank)} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!bankname && "text-gray-600"}`}>
+                        <div onClick={() =>{
+                             setOpenBank(!openBank)
+                            setOpenCat(false)
+                             }} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!bankname && "text-gray-600"}`}>
 
                             <p className=''>{bankname
                                 ? bankname?.length > 15
@@ -150,10 +163,15 @@ const Selections = () => {
                         onChange={(e) => {
                             setSearchInput(e.target.value)
                             setCardSelected("")
+                            setActiveCard(null)
                             setBankname("")
                             setSelected("")
                             setSelectedBank(null);
                             setSelectedCategory(null);
+                        }}
+                        onFocus={()=>{
+                            setOpenBank(false)
+                            setOpenCat(false)
                         }}
                         />
                        </div>
@@ -169,13 +187,16 @@ const Selections = () => {
                     <div className="card-grp flex flex-col sm:flex-row items-center gap-10 justify-center  font-medium ">
                         {uniqueCards.map((card, i) => (
                             <button key={i}
-                             onClick={() => setCardSelected(card)}
-                                className='border-2  rounded-md p-4 bg-[#9EDDFF] hover:bg-[#6499E9]'>{card}</button>
+                            //  onClick={() => setCardSelected(card)}
+                             onClick={() => handleCardSelected(card)}
+                                className={`border-2 rounded-md p-4 ${
+                                    activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                } hover:bg-[#6499E9]`}>{card}</button>
                         ))}
                     </div>
                 </div>
             </div>
-            <TopBanner></TopBanner>
+            {/* <TopBanner></TopBanner> */}
             
             
                 

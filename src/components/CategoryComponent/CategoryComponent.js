@@ -39,7 +39,7 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
 
               ))}
 
-          {/*  */}
+         
 
         </div>
         <div className="right-section px-4 mt-4 md:mt-0   w-full md:w-1/3 lg:w-1/4 flex  justify-center ">

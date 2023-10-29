@@ -24,6 +24,7 @@ const BankComponent = ({ allInfos, selected, filterCards,cardSelected }) => {
           {/*  singleinfo.filter( singleinfo.category===selected) */}
           {/* allInfos.filter((singleInfo) => singleInfo.bankfullname === selected) */}
           {
+            mainFiltered.length > 0 ? (
             mainFiltered.map((singleInfo, i) => (
 
               <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border border-solid border-amber-500 rounded-md px-3
@@ -34,7 +35,11 @@ const BankComponent = ({ allInfos, selected, filterCards,cardSelected }) => {
               </div>
 
 
-            ))}
+            ))
+            ) : (
+              <p className='text-right font-semibold text-2xl text-black'>No {cardSelected} Available !!!</p>
+            )
+          }
 
           {/*  */}
 

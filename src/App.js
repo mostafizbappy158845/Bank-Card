@@ -5,6 +5,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import CarrerPage from './pages/CarrerPage/CarrerPage';
 import ContactUsPage from './pages/ContactUsPage/ContactUsPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import SingleAddPage from './pages/SingleAddPage/SingleAddPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/carrer' element={<CarrerPage/>}/>
       <Route path='/contactus' element={<ContactUsPage/>}/>
       <Route path='/login' element={<LoginPage/>}/>
+      <Route path='/singleData/:id' element={<SingleAddPage/>}/>
         
       </Routes>
     </div>

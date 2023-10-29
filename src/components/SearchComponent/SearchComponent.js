@@ -1,6 +1,7 @@
 
 import React from 'react';
 import vertical_banner2 from '../../assets/images/vertical_banner.svg'
+import { Link } from 'react-router-dom';
 const SearchComponent = ({ allInfos,searchInput, selected, filterCards,cardSelected }) => {
 
   // ....//
@@ -9,7 +10,7 @@ const SearchComponent = ({ allInfos,searchInput, selected, filterCards,cardSelec
 //   const mainFiltered = cardSelected ? doubleFiltered: filteredInfos
 // ||singleInfo.category.toLowerCase().includes(searchInput)
   const filteredInfos = allInfos.filter((singleInfo) => singleInfo.name.toLowerCase().includes(searchInput));
-  const doubleFiltered = allInfos.filter((singleInfo) => singleInfo.name.toLowerCase().includes(searchInput) && singleInfo.cardtype===cardSelected);
+  const doubleFiltered = allInfos.filter((singleInfo) =>singleInfo.name.toLowerCase().includes(searchInput) && singleInfo.cardtype===cardSelected);
   const mainFiltered = cardSelected ? doubleFiltered: filteredInfos
   //....//
   return (
@@ -27,18 +28,24 @@ const SearchComponent = ({ allInfos,searchInput, selected, filterCards,cardSelec
       <div className="left-seection h-fit w-full md:w-2/3 lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
         
         {
-          mainFiltered
-            .map((singleInfo, i) => (
+          mainFiltered.length > 0 ? (
+            mainFiltered.map((singleInfo, i) => (
               <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border rounded-md px-3
-              shadow-lg transform hover:scale-105 duration-300 delay-150  transition overflow-hidden  text-center lg:text-left">
+                shadow-lg transform hover:scale-105 duration-300 delay-150  transition overflow-hidden  text-center lg:text-left">
                 <div className='text-lg  md:text-xl lg:text-2xl font-serif font-medium  lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} <br />{singleInfo.category}</div>
                 <div className='font-medium  '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
-                <div className='font-medium lg:ml-8 text-left uppercase text-xl'> <span className='text-red-500'>{singleInfo.bankshortname}</span> <span className='text-blue-800 '>{singleInfo.cardcategory}</span></div>
+                <div className='font-medium lg:ml-8 text-left uppercase text-xl'> <span className='text-red-500'>{singleInfo.bankshortname}</span> <span className='text-blue-800 '>{singleInfo.cardcategory}</span>
+                <Link to={`/singleData/${singleInfo.id}`} className='p-2 border border-emerald-400'>Details</Link>
+                
+                </div>
+                
               </div>
 
-
-            ))
-        }
+))
+) : (
+  <p className='text-right font-semibold text-2xl text-black'>No cards available !!!</p>
+)
+}
 
         
 
