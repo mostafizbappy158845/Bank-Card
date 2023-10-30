@@ -22,6 +22,7 @@ const Review = () => {
           // centeredSlides={true}
           slidesPerView={1}
         spaceBetween={10}
+        speed={2000}
           pagination={{
             clickable: true,
           }}

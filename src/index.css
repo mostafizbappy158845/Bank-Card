@@ -5,6 +5,10 @@
 .active{
   color: rgb(42, 186, 247);
 }
+/* .swiper-pagination-bullet{
+  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 30px));
+  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 20px));
+} */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

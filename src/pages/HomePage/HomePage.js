@@ -8,13 +8,15 @@ import VisitPlaces from '../../components/VisitPlaces/VisitPlaces';
 // import Footer from '../../components/Footer/Footer';
 import MainFooter from '../../components/Footer/MainFooter';
 import Header from '../../components/Navbar/Header';
+import SlidePage from '../SlidePage/SlidePage';
 
 const HomePage = () => {
     return (
         
            <div>
            <Header></Header>
-           <ImageBanner></ImageBanner>
+           {/* <ImageBanner></ImageBanner> */}
+           <SlidePage></SlidePage>
            <Selections></Selections>
            <BestDeal></BestDeal>
            <Review></Review>
