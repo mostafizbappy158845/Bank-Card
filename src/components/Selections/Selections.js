@@ -60,14 +60,14 @@ const Selections = () => {
     
     return (
         <div>
-            <div className='mx-auto w-full px-10 py-5  bg-slate-100'>
+            <div className='mx-auto w-full px-10 py-5  bg-slate-200'>
                 {/* flex flex-col md:flex-cols-2 lg:flex-row   justify-between items-center */}
                 <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-semibold">
                     <div className='w-52 relative mb-5 '>
                         <div onClick={() => {
                             setOpenCat(!openCat)
                             setOpenBank(false)
-                        }} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
+                        }} className={`flex items-center justify-between text-lg  bg-slate-100 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
 
                             <p className=''>{selected
                                 ? selected?.length > 15
@@ -76,7 +76,7 @@ const Selections = () => {
                                 : "Category"}</p>
                             <p className=''>< AiFillCaretDown size={20} className={`${openCat && "rotate-180"}`} /></p>
                         </div>
-                        <ul className={`absolute bg-slate-200 w-54 top-10 rounded-sm text-left overflow-y-auto ${openCat ? " z-20 max-h-52 pt-0" : " max-h-0"
+                        <ul className={`absolute bg-slate-100 w-full top-10 rounded-sm text-left overflow-y-auto ${openCat ? " z-20 max-h-52 pt-0" : " max-h-0"
                             }`}>
 
                             {
@@ -84,9 +84,9 @@ const Selections = () => {
                                 uniqueCategorys.map((alInfo, i) => (
                                     
                                     <li key={i}
-                                        className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-2 py-2
+                                        className={`hover:bg-sky-300 hover:text-white text-sm cursor-pointer px-2 py-2
                                  ${alInfo?.toLowerCase() === selected?.toLowerCase() &&
-                                            "bg-sky-600 text-white"
+                                            "bg-sky-400 text-white"
                                             }`}
                                         onClick={() => {
                                             // if(country?.name?.toLowerCase() !== selected.toLowerCase() ){
@@ -110,7 +110,7 @@ const Selections = () => {
                         <div onClick={() =>{
                              setOpenBank(!openBank)
                             setOpenCat(false)
-                             }} className={`flex items-center justify-between text-lg  bg-slate-200 rounded-sm px-2 ${!bankname && "text-gray-600"}`}>
+                             }} className={`flex items-center justify-between text-lg  bg-slate-100 rounded-sm px-2 ${!bankname && "text-gray-600"}`}>
 
                             <p className=''>{bankname
                                 ? bankname?.length > 15
@@ -119,7 +119,7 @@ const Selections = () => {
                                 : "Bank"}</p>
                             <p className=''>< AiFillCaretDown size={20} className={`${openBank && "rotate-180"}`} /></p>
                         </div>
-                        <ul className={`absolute bg-slate-200 w-54 top-10 rounded-sm text-left overflow-y-auto ${openBank ? "z-20 max-h-52 pt-0" : " max-h-0"
+                        <ul className={`absolute bg-slate-100 w-full top-10 rounded-sm text-left overflow-y-auto ${openBank ? "z-20 max-h-52 pt-0" : " max-h-0"
                             }`}>
 
                             {
@@ -127,9 +127,9 @@ const Selections = () => {
                                 uniqueBank.map((alInfo, i) => (
                                     // Bappy is okkkkk
                                     <li key={i}
-                                        className={`hover:bg-sky-400 hover:text-white text-sm cursor-pointer px-4 py-2
+                                        className={`hover:bg-sky-300 hover:text-white text-sm cursor-pointer px-4 py-2
                                  ${alInfo?.toLowerCase() === bankname?.toLowerCase() &&
-                                            "bg-sky-600 text-white"
+                                            "bg-sky-400 text-white"
                                             }`}
                                         onClick={() => {
                                             setBankname(alInfo);
@@ -150,7 +150,7 @@ const Selections = () => {
                         <p className=''>Bank</p>
                         <p className=''><AiFillCaretDown size={20} /></p>
                     </div> */}
-                    <div className='mb-5  flex items-center justify-between bg-slate-200 rounded-md w-52 text-lg px-2'>
+                    <div className='mb-5  flex items-center justify-between bg-slate-100 rounded-md w-52 text-lg px-2'>
                     <a href="#rvw"><p className=''>Review</p></a>
                     <a href="#rvw"><MdOutlineReviews size={20}></MdOutlineReviews></a>
                         
@@ -159,7 +159,7 @@ const Selections = () => {
                         {/* <p className=''>Search</p>
                         <p><FiSearch size={20}></FiSearch></p> */}
                        <div> 
-                        <input type="text" value={searchInput} placeholder='Search...' className=' mb-5 text-lg bg-slate-200 rounded-md w-52 px-2'
+                        <input type="text" value={searchInput} placeholder='Search...' className=' mb-5 text-lg bg-slate-100 rounded-md w-52 px-2'
                         onChange={(e) => {
                             setSearchInput(e.target.value)
                             setCardSelected("")
@@ -182,7 +182,7 @@ const Selections = () => {
 
 
             {/* <Card allCards={allInfos} handleCard = {}></Card> */}
-            <div className=' bg-[#eeeded] pt-4'>
+            <div className=' bg-[#eeeded] py-4'>
                 <div className="wrapper">
                     <div className="card-grp flex flex-col sm:flex-row items-center gap-10 justify-center  font-medium ">
                         {uniqueCards.map((card, i) => (
@@ -196,7 +196,7 @@ const Selections = () => {
                     </div>
                 </div>
             </div>
-            {/* <TopBanner></TopBanner> */}
+            <TopBanner></TopBanner>
             
             
                 

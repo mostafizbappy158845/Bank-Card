@@ -5,7 +5,7 @@ const SingleAdd = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch(``)
+        fetch("data.json")
             //https://restcountries.com/v2/all?fields=name
             .then((res) => res.json())
             .then((data) => {
