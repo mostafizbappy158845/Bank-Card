@@ -45,8 +45,8 @@ const SlidePage = () => {
                 <SwiperSlide> 
                     <div className="banner p-4 md:px-8 lg:px-12 md:py-6 lg:py-10">
                         <img className='max-h-[430px] w-full ' src={banner} alt="" />
-                        <h2 className="slide-title absolute top-1/3 left-1/2 text-4xl font-bold text-[#0C356A] ">Card Rewards Await You</h2>
-                        <h3 className="slide-text absolute top-1/2 left-1/2 text-lg text-white font-thin text-left">Earn exciting rewards and benefits with our credit and debit card offerings.Earn exciting<br /> rewards and benefits with our credit and debit card offerings.</h3>
+                        <h2 className="slide-title absolute top-1/3 left-1/2 text-md md:text-4xl font-bold text-[#0C356A] ">Card Rewards Await You</h2>
+                        <h3 className="slide-text absolute top-1/2 left-1/2 text-sm md:text-lg text-white font-thin text-left">Earn exciting rewards and benefits with our credit and debit card offerings.Earn exciting<br /> rewards and benefits with our credit and debit card offerings.</h3>
                     </div>
                 </SwiperSlide>
 

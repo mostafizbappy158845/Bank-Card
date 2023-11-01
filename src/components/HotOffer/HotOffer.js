@@ -49,7 +49,7 @@ const HotOffer = () => {
                   
                    
                 </div>
-                <div className="right-section px-4 mt-5 w-full lg:w-1/5 min-h-full flex items-center justify-center ">
+                <div className="right-section px-4  w-full lg:w-1/5 min-h-full flex items-center justify-center ">
 
                     {/* Display your image here */}
                     <img className='w-full h-full object-cover' src={vertical_banner2} alt="vertical-banner" />

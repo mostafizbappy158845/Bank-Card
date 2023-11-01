@@ -119,5 +119,20 @@
     "name": "Khanaz",
     "location": "Dhanmondi",
     "city": "Dhaka"
+  },
+  {
+    "id": 8,
+    "bankfullname": "Brac Bank",
+    "bankshortname": "BB",
+    "cardtype": "Debit Card",
+    "typeofcard": "Gold",
+    "cardcategory": "Visa",
+    "discountdetail": "10% OFF",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Entartainment",  
+    "name": "Fantasy kingdom",
+    "location": "Dhanmondi",
+    "city": "Dhaka"
   }
 ]

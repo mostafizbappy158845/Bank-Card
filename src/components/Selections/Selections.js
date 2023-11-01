@@ -60,7 +60,7 @@ const Selections = () => {
     
     return (
         <div>
-            <div className='mx-auto w-full px-10 py-5  bg-slate-200'>
+            <div className='mx-auto w-full px-10 py-5  bg-slate-200 sticky top-16 z-10'>
                 {/* flex flex-col md:flex-cols-2 lg:flex-row   justify-between items-center */}
                 <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-semibold">
                     <div className='w-52 relative mb-5 '>
@@ -119,7 +119,7 @@ const Selections = () => {
                                 : "Bank"}</p>
                             <p className=''>< AiFillCaretDown size={20} className={`${openBank && "rotate-180"}`} /></p>
                         </div>
-                        <ul className={`absolute bg-slate-100 w-full top-10 rounded-sm text-left overflow-y-auto ${openBank ? "z-20 max-h-52 pt-0" : " max-h-0"
+                        <ul className={`absolute bg-slate-100 w-full top-10 rounded-sm text-left overflow-y-auto ${openBank ? "z-40 max-h-52 pt-0" : " max-h-0"
                             }`}>
 
                             {
@@ -158,7 +158,7 @@ const Selections = () => {
                     {/* <div  className='mb-5  flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'> */}
                         {/* <p className=''>Search</p>
                         <p><FiSearch size={20}></FiSearch></p> */}
-                       <div> 
+                       <div > 
                         <input type="text" value={searchInput} placeholder='Search...' className=' mb-5 text-lg bg-slate-100 rounded-md w-52 px-2'
                         onChange={(e) => {
                             setSearchInput(e.target.value)
@@ -178,13 +178,9 @@ const Selections = () => {
                     {/* </div> */}
                     
                 </div>
-            </div>
-
-
-            {/* <Card allCards={allInfos} handleCard = {}></Card> */}
-            <div className=' bg-[#eeeded] py-4'>
+                <div className=' py-4 '>
                 <div className="wrapper">
-                    <div className="card-grp flex flex-col sm:flex-row items-center gap-10 justify-center  font-medium ">
+                    <div className="card-grp flex flex-row  items-center gap-10 justify-center  font-medium ">
                         {uniqueCards.map((card, i) => (
                             <button key={i}
                             //  onClick={() => setCardSelected(card)}
@@ -196,6 +192,11 @@ const Selections = () => {
                     </div>
                 </div>
             </div>
+            </div>
+
+
+            {/* <Card allCards={allInfos} handleCard = {}></Card> */}
+            
             <TopBanner></TopBanner>
             
             
