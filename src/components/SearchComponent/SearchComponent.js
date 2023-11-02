@@ -31,17 +31,19 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
             mainFiltered.length > 0 ? (
               mainFiltered.map((singleInfo, i) => (
                 // <Link to={`/singleData/${singleInfo.id}`} >
-                  <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border rounded-md px-3
-                shadow-lg transform hover:scale-105 duration-300 delay-150  transition overflow-hidden  text-center lg:text-left">
-                    <div className='text-lg  md:text-xl lg:text-2xl font-serif font-medium  lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} <br />{singleInfo.category}</div>
-                    <div className='font-medium  '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
-                    <div className='font-medium lg:ml-8 text-left uppercase text-xl'> <span className='text-red-500'>{singleInfo.bankshortname}</span> <span className='text-blue-800 '>{singleInfo.cardcategory}</span>
-
-
+                <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border rounded-md px-3
+                     shadow-lg transform hover:scale-105 duration-300 delay-150  transition overflow-hidden  text-center lg:text-left">
+                  {/* <div className='flex '> */}
+                    <div className='text-lg w-2/5  md:text-xl lg:text-2xl font-serif font-medium  lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} </div>
+                    <div className=' flex w-3/5'>
+                      <div className='font-medium  '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl lg:text-left'>{singleInfo.discountdetail}</span><span className=''> & Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
+                      <div className='font-medium lg:ml-8 text-left uppercase text-xl'> <span className='text-red-500'>{singleInfo.bankshortname}</span> <span className='text-blue-800 '>{singleInfo.cardcategory}</span></div>
                     </div>
 
-                  </div>
-                  /* </Link> */
+                  {/* </div> */}
+
+                </div>
+                /* </Link> */
 
               ))
             ) : (

@@ -63,7 +63,7 @@ const Selections = () => {
             <div className='mx-auto w-full px-10 py-5  bg-slate-200 sticky top-16 z-10'>
                 {/* flex flex-col md:flex-cols-2 lg:flex-row   justify-between items-center */}
                 <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-semibold">
-                    <div className='w-52 relative mb-5 '>
+                    <div className='w-52 relative mb-5 cursor-pointer'>
                         <div onClick={() => {
                             setOpenCat(!openCat)
                             setOpenBank(false)
@@ -106,7 +106,7 @@ const Selections = () => {
                         </ul>
 
                     </div>
-                    <div className='w-52 relative mb-5 '>
+                    <div className='w-52 relative mb-5 cursor-pointer'>
                         <div onClick={() =>{
                              setOpenBank(!openBank)
                             setOpenCat(false)
@@ -182,12 +182,23 @@ const Selections = () => {
                 <div className="wrapper">
                     <div className="card-grp flex flex-row  items-center gap-10 justify-center  font-medium ">
                         {uniqueCards.map((card, i) => (
-                            <button key={i}
+                            !anySelect ?(
+                            <button disabled key={i}
                             //  onClick={() => setCardSelected(card)}
                              onClick={() => handleCardSelected(card)}
                                 className={`border-2 rounded-md p-4 ${
                                     activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
-                                } hover:bg-[#6499E9]`}>{card}</button>
+                                } hover:bg-[#6499E9]`}>{card}
+                            </button>
+                            ):(
+                                <button  key={i}
+                            //  onClick={() => setCardSelected(card)}
+                             onClick={() => handleCardSelected(card)}
+                                className={`border-2 rounded-md p-4 cursor-pointer ${
+                                    activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                } hover:bg-[#6499E9]`}>{card}
+                            </button>
+                            )
                         ))}
                     </div>
                 </div>

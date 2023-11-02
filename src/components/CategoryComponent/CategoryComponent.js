@@ -33,12 +33,15 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
             mainFiltered
               .map((singleInfo, i) => (
                 //bg-[#6499E9] bg-[#9EDDFF]
-                <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border rounded-md px-3
+                <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border rounded-md pr-8 pl-2
                 shadow-lg transform hover:scale-105 duration-300 delay-150  transition  text-center lg:text-left">
-                  <div className='text-lg  md:text-xl lg:text-2xl font-serif font-semibold lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 '>{singleInfo.name} </div>
-                  <div className='font-medium  '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span> <p></p></div>
-                  <div className='font-medium  lg:ml-8 text-center'> <span className='text-red-500 font-bold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-bold uppercase text-xl'>{singleInfo.cardcategory}</span></div>
+                <div className='md:w-2/6   text-lg  md:text-xl lg:text-2xl font-serif font-semibold lg:tracking-wide  mr-2 md:mr-4 '>{singleInfo.name} {singleInfo.category}</div>
+                  
+                  <div className='flex md:w-4/6'>
+                  <div className='font-medium  w-2/3'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span> <p></p></div>
+                  <div className='font-medium w-1/3  text-left'> <span className='text-red-500 font-bold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-bold uppercase text-xl'>{singleInfo.cardcategory}</span></div>
                   {/* <Link to={`/singleData/${singleInfo.id}`} className='p-2 border border-emerald-400'>Details</Link> */}
+                  </div>
                 </div>
 
 
