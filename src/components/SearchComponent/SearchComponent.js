@@ -9,10 +9,24 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
   //   const doubleFiltered = allInfos.filter((singleInfo)=> singleInfo.bankfullname === selected && singleInfo.cardtype===cardSelected)
   //   const mainFiltered = cardSelected ? doubleFiltered: filteredInfos
   // ||singleInfo.category.toLowerCase().includes(searchInput)
+  //...//
   const filteredInfos = allInfos.filter((singleInfo) => singleInfo.name.toLowerCase().includes(searchInput));
-  const doubleFiltered = allInfos.filter((singleInfo) => singleInfo.name.toLowerCase().includes(searchInput) && singleInfo.cardtype === cardSelected);
+  const doubleFiltered = allInfos.filter((singleInfo) =>singleInfo.name.toLowerCase().includes(searchInput) && singleInfo.cardtype === cardSelected);
+  
   const mainFiltered = cardSelected ? doubleFiltered : filteredInfos
   //....//
+  // const filteredInfos = allInfos.filter((singleInfo) => {
+  //   const nameMatch = singleInfo.name.toLowerCase().includes(searchInput);
+  //   const locationMatch = singleInfo.location.toLowerCase().includes(searchInput);
+  //   const typeofcardMatch = singleInfo.typeofcard.toLowerCase().includes(searchInput);
+  //   const cardMatch = singleInfo.cardtype === cardSelected;
+  //   const allMatch = nameMatch || locationMatch || typeofcardMatch
+  
+  //   // return nameMatch || locationMatch || typeofcardMatch ||(cardSelected && cardMatch);
+  //   return allMatch && cardMatch;
+  // });
+  
+  // const mainFiltered = filteredInfos;
   return (
     <div>
       <div className='mt-14 mx-4 flex flex-col md:flex-row justify-between'>
@@ -31,13 +45,13 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
             mainFiltered.length > 0 ? (
               mainFiltered.map((singleInfo, i) => (
                 // <Link to={`/singleData/${singleInfo.id}`} >
-                <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border rounded-md px-3
+                <div key={i} className="info-item py-4  border rounded-md px-3
                      shadow-lg transform hover:scale-105 duration-300 delay-150  transition overflow-hidden  text-center lg:text-left">
                   {/* <div className='flex '> */}
-                    <div className='text-lg w-2/5  md:text-xl lg:text-2xl font-serif font-medium  lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} </div>
-                    <div className=' flex w-3/5'>
-                      <div className='font-medium  '>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl lg:text-left'>{singleInfo.discountdetail}</span><span className=''> & Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
-                      <div className='font-medium lg:ml-8 text-left uppercase text-xl'> <span className='text-red-500'>{singleInfo.bankshortname}</span> <span className='text-blue-800 '>{singleInfo.cardcategory}</span></div>
+                    <div className='mb-4 text-lg text-center  md:text-xl lg:text-2xl font-serif font-medium  lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} </div>
+                    <div className=' flex justify-between'>
+                      <div className='font-medium  text-left'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl lg:text-left'>{singleInfo.discountdetail}</span><span className=''> & Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
+                      <div className='font-medium text-left uppercase text-xl'> <span className='text-red-500'>{singleInfo.bankshortname}</span> <span className='text-blue-800 '>{singleInfo.cardcategory}</span></div>
                     </div>
 
                   {/* </div> */}

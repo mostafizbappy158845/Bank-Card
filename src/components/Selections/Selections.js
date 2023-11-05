@@ -7,6 +7,7 @@ import CategoryComponent from '../CategoryComponent/CategoryComponent';
 import BankComponent from '../BankComponent/BankComponent';
 import HotOffer from '../HotOffer/HotOffer';
 import SearchComponent from '../SearchComponent/SearchComponent';
+// import { Users } from '../../../public/data.json
 // import AllInfo from '../../data.json'
 
 const Selections = () => {
@@ -60,9 +61,9 @@ const Selections = () => {
     
     return (
         <div>
-            <div className='mx-auto w-full px-10 py-5  bg-slate-200 sticky top-16 z-10'>
+            <div className='mx-auto w-full px-4 md:px-10 py-2 md:py-5  bg-slate-200 sticky top-16 z-10'>
                 {/* flex flex-col md:flex-cols-2 lg:flex-row   justify-between items-center */}
-                <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-semibold">
+                <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-normal">
                     <div className='w-52 relative mb-5 cursor-pointer'>
                         <div onClick={() => {
                             setOpenCat(!openCat)
@@ -159,7 +160,7 @@ const Selections = () => {
                         {/* <p className=''>Search</p>
                         <p><FiSearch size={20}></FiSearch></p> */}
                        <div > 
-                        <input type="text" value={searchInput} placeholder='Search...' className=' mb-5 text-lg bg-slate-100 rounded-md w-52 px-2'
+                        <input type="text" value={searchInput} placeholder='Search...' className=' mb-5 text-lg bg-slate-100 rounded-md w-52 px-2 outline-none'
                         onChange={(e) => {
                             setSearchInput(e.target.value)
                             setCardSelected("")
@@ -178,15 +179,15 @@ const Selections = () => {
                     {/* </div> */}
                     
                 </div>
-                <div className=' py-4 '>
+                <div className=''>
                 <div className="wrapper">
-                    <div className="card-grp flex flex-row  items-center gap-10 justify-center  font-medium ">
+                    <div className="card-grp flex flex-row  items-center gap-10 justify-center  font-normal ">
                         {uniqueCards.map((card, i) => (
                             !anySelect ?(
                             <button disabled key={i}
                             //  onClick={() => setCardSelected(card)}
                              onClick={() => handleCardSelected(card)}
-                                className={`border-2 rounded-md p-4 ${
+                                className={`border-2 rounded-md p-2 ${
                                     activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
                                 } hover:bg-[#6499E9]`}>{card}
                             </button>
@@ -194,7 +195,7 @@ const Selections = () => {
                                 <button  key={i}
                             //  onClick={() => setCardSelected(card)}
                              onClick={() => handleCardSelected(card)}
-                                className={`border-2 rounded-md p-4 cursor-pointer ${
+                                className={`border-2 rounded-md p-2 cursor-pointer ${
                                     activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
                                 } hover:bg-[#6499E9]`}>{card}
                             </button>

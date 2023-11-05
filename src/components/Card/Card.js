@@ -5,10 +5,10 @@ const Card = ({allCards}) => {
     return (
         <div className=' bg-[#eeeded] pt-4'>
             <div className="wrapper">
-                <div className="card-grp flex items-center justify-center  font-medium ">
+                <div className="card-grp flex items-center justify-center  font-bold ">
                     {uniqueCards.map( (card,i) =>(
                              <button key={i} 
-                             className='border-2  rounded-md p-4 bg-[#9EDDFF] hover:bg-[#6499E9]'>{card}</button>
+                             className='border-2  rounded-md p-4 bg-[#9EDDFF] hover:bg-[#070707]'>{card}</button>
                              ))}
                    
                     {/* <button className='mx-4 border-2 rounded-md p-4  bg-[#9EDDFF] hover:bg-[#6499E9]'>Credit Cards</button>
