@@ -213,9 +213,9 @@ const Selections = () => {
             
             
                 
-                {selectedCategory && <CategoryComponent allInfos={allInfos} selected={selected} cardSelected={cardSelected} />}
-                {selectedBank && <BankComponent allInfos={allInfos}  selected={bankname} cardSelected={cardSelected}/>}
-                {searchInput && <SearchComponent allInfos={allInfos} searchInput={searchInput} cardSelected={cardSelected}/>}
+                {selectedCategory && <CategoryComponent allInfos={allInfos} selected={selected}       cardSelected={cardSelected} />}
+                {selectedBank     && <BankComponent     allInfos={allInfos} selected={bankname}       cardSelected={cardSelected}/>}
+                {searchInput      &&  <SearchComponent  allInfos={allInfos} searchInput={searchInput} cardSelected={cardSelected}/>}
 
                 {!anySelect && <HotOffer/>}
         </div>

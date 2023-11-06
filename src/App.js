@@ -8,6 +8,7 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import SingleAddPage from './pages/SingleAddPage/SingleAddPage';
 import SlidePage from './pages/SlidePage/SlidePage';
 import ApplicationForm from './components/ApplicationForm/ApplicationForm';
+import SignupForm from './pages/SignUpPage/SignUpPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path='/singleData/:id' element={<SingleAddPage/>}/>
       <Route path='/slide' element={<SlidePage/>}/>
       <Route path='/apply' element={<ApplicationForm/>}/>
+      <Route path='/signup' element={<SignupForm/>}/>
       </Routes>
     </div>
   );
