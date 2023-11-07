@@ -1,5 +1,6 @@
 import React from 'react';
 import vertical_banner2 from '../../assets/images/vertical_banner.svg'
+import vertical_banner from '../../assets/images/upay250x250.jpg'
 
 const BestDeal = () => {
   return (
@@ -51,7 +52,8 @@ const BestDeal = () => {
         <div className="right-section px-4 mt-4 w-full md:w-1/5 min-h-full flex items-center justify-center ">
 
           {/* Display your image here */}
-          <img className='w-full h-full' src={vertical_banner2} alt="vertical-banner" />
+          <img className='w-full h-full hidden lg:block' src={vertical_banner2} alt="vertical-banner" />
+          <img className='w-full h-full block md:hidden' src={vertical_banner} alt="vertical-banner" />
         </div>
 
       </div>

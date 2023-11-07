@@ -24,7 +24,7 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
       </div>
       <hr className='m-4 w-32 h-1 bg-gray-500 ' />
       <div className='main-part flex flex-col md:flex-row '>
-        <div className="left-seection h-fit w-full md:w-2/3 lg:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+        <div className="left-seection h-fit w-full md:w-3/4 lg:w-5/6 grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
           {/* Create a 3x3 grid of information */}
           {/*  singleinfo.filter( singleinfo.category===selected) */}
           {/* allInfos.filter((singleInfo) => singleInfo.category === selected) #6499E9*/}
@@ -35,7 +35,7 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
                 //bg-[#6499E9] bg-[#9EDDFF]
                 <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border rounded-md pr-8 pl-2
                 shadow-lg transform hover:scale-105 duration-300 delay-150  transition  text-center lg:text-left">
-                <div className='md:w-2/6   text-lg  md:text-xl lg:text-2xl font-serif font-normal lg:tracking-wide  mr-2 md:mr-4 '>{singleInfo.name} {singleInfo.category}</div>
+                <div className='md:w-2/6   text-lg  md:text-xl lg:text-2xl font-serif font-normal   mr-2 md:mr-4 '>{singleInfo.name}</div>
                   
                   <div className='flex md:w-4/6'>
                   <div className='font-medium  w-2/3'>Enjoy <span className='font-bold text-red-500 text-lg md:text-xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-semibold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span> <p></p></div>
@@ -54,7 +54,7 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
          
 
         </div>
-        <div className="right-section px-4 mt-4 md:mt-0   w-full md:w-1/3 lg:w-1/4 flex  justify-center ">
+        <div className="right-section px-4 mt-4 md:mt-0   w-full md:w-1/4 lg:w-1/6 flex  justify-center ">
 
           {/* Display your image here */}
           <img className='w-full   object-contain' src={vertical_banner2} alt="vertical-banner" />

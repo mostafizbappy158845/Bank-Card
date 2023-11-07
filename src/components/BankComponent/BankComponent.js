@@ -14,7 +14,7 @@ const BankComponent = ({ allInfos, selected, filterCards,cardSelected }) => {
           <p className=' texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex   mt-4 capitalize gap-4'><span className='text-rose-500'>{selected} </span></p>
 
         </div>
-        <div className='text-xl font-mono md:font-semibold border  bg-[#9EDDFF] hover:bg-[#6499E9] p-1 lg:p-2 rounded-md   '>Apply for card</div>
+        <div className='text-xl font-mono md:font-semibold border  bg-[#9EDDFF] hover:bg-[#6499E9] rounded-md'>Apply for card</div>
 
       </div>
       <hr className='m-4 w-32 h-1 bg-gray-500 ' />
@@ -26,9 +26,9 @@ const BankComponent = ({ allInfos, selected, filterCards,cardSelected }) => {
           {
             mainFiltered.length > 0 ? (
             mainFiltered.map((singleInfo, i) => (
-
-              <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border border-solid border-amber-500 rounded-md px-3
-              bg-[#9EDDFF] hover:bg-[#6499E9]">
+              // bg-[#9EDDFF] hover:bg-[#6499E9]
+              <div key={i} className="info-item py-8 flex flex-col lg:flex-row  border border-solid rounded-md px-3
+              shadow-lg transform hover:scale-105 duration-300 delay-150  transition">
                 <div className='text-lg md:text-xl lg:text-2xl font-serif font-semibold md:font-bold lg:tracking-wide  mr-2 md:mr-4 lg:mr-8 uppercase  text-center'>{singleInfo.bankshortname} <br />OFFER!!</div>
                 <div className='font-medium text-center lg:text-justify'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl'>{singleInfo.discountdetail}</span> <br /><span className=''>& Exciting Deals</span> <br /> with your<span className=''> {singleInfo.bankshortname} {singleInfo.cardtype}</span></div>
                 <div className='font-medium  lg:ml-8 text-center lg:text-end'> <span className='text-red-500 font-bold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-bold uppercase text-xl'>{singleInfo.cardcategory}</span></div>
