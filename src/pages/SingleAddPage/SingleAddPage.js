@@ -6,11 +6,11 @@ import MainFooter from '../../components/Footer/MainFooter';
 const SingleAddPage = () => {
     return (
         <div>
-            <Header></Header>
+            {/* <Header></Header> */}
             <div className='m-28'>
                 <SingleAdd></SingleAdd>
             </div>
-            <MainFooter></MainFooter>
+            {/* <MainFooter></MainFooter> */}
         </div>
     );
 };

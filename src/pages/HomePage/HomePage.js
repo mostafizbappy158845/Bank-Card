@@ -12,18 +12,19 @@ import SlidePage from '../SlidePage/SlidePage';
 
 const HomePage = () => {
     return (
+    <>
         
-           <div>
-           <Header></Header>
-           {/* <ImageBanner></ImageBanner> */}
-           <SlidePage></SlidePage>
-           <Selections></Selections>
-           <BestDeal></BestDeal>
-           <Review></Review>
-           <VisitPlaces></VisitPlaces>
-           <MainFooter></MainFooter>
+           <div className=''>
+                {/* <Header></Header> */}
+                {/* <ImageBanner></ImageBanner> */}
+                <SlidePage></SlidePage>
+                <Selections></Selections>
+                <BestDeal></BestDeal>
+                <Review></Review>
+                <VisitPlaces></VisitPlaces>
+                {/* <MainFooter></MainFooter> */}
            </div>
-        
+     </>
     );
 };
 

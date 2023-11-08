@@ -1,7 +1,7 @@
-
 import React from 'react';
 import vertical_banner2 from '../../assets/images/vertical_banner.svg'
-import { Link } from 'react-router-dom';
+
+
 const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSelected }) => {
 
   // ....//
@@ -10,9 +10,9 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
   //   const mainFiltered = cardSelected ? doubleFiltered: filteredInfos
   // ||singleInfo.category.toLowerCase().includes(searchInput)
   //...//
-  const keys = ["Credit Card","ATM Card","Debit Card"]
-  const filteredInfos = allInfos.filter((singleInfo) => singleInfo.name.toLowerCase().includes(searchInput.toLowerCase()) ||singleInfo.location.toLowerCase().includes(searchInput));
-  const doubleFiltered = allInfos.filter((singleInfo) =>( singleInfo.name.toLowerCase().includes(searchInput.toLowerCase()) ||singleInfo.location.toLowerCase().includes(searchInput)) && singleInfo.cardtype === cardSelected);
+  
+  const filteredInfos = allInfos.filter((singleInfo) => singleInfo.name.toLowerCase().includes(searchInput.toLowerCase()) ||singleInfo.location.toLowerCase().includes(searchInput.toLowerCase()));
+  const doubleFiltered = allInfos.filter((singleInfo) =>( singleInfo.name.toLowerCase().includes(searchInput.toLowerCase()) ||singleInfo.location.toLowerCase().includes(searchInput.toLowerCase())) && singleInfo.cardtype === cardSelected);
   
   const mainFiltered = cardSelected ? doubleFiltered : filteredInfos
   //....//
@@ -46,7 +46,7 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
             mainFiltered.length > 0 ? (
               mainFiltered.map((singleInfo, i) => (
                 // <Link to={`/singleData/${singleInfo.id}`} >
-                <div key={i} className="info-item py-4  border rounded-md px-3
+                <div key={i} className="info-item py-4  border rounded-md px-3 
                      shadow-lg transform hover:scale-105 duration-300 delay-150  transition overflow-hidden  text-center lg:text-left">
                   {/* <div className='flex '> */}
                     <div className='mb-4 text-lg text-center  md:text-xl lg:text-2xl font-serif font-medium  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} </div>

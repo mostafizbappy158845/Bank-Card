@@ -5,6 +5,11 @@
 .active{
   color: rgb(42, 186, 247);
 }
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 /* .swiper-pagination-bullet{
   width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 30px));
   height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 20px));

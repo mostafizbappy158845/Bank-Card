@@ -56,7 +56,17 @@ const Selections = () => {
     const handleCardSelected = (card) =>{
         setCardSelected(card);
         setActiveCard(card);
-    }    
+    }  
+    
+
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+    
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+    // --End For sticky and scroll ---
     const anySelect = selectedCategory || selectedBank || searchInput;
     
     return (
@@ -98,6 +108,9 @@ const Selections = () => {
                                             handleCategorySelect(alInfo)
                                             setCardSelected("")
                                             setSearchInput("")
+                                            // scrollToSection('section1')
+                                            window.scrollTo({top: 770, behavior:"smooth"})
+                                            
                                         }}
                                     >
                                         {alInfo}
@@ -124,9 +137,9 @@ const Selections = () => {
                             }`}>
 
                             {
-                                //  allInfos.map((alInfo, i) => (
+                                
                                 uniqueBank.map((alInfo, i) => (
-                                    // Bappy is okkkkk
+                                    
                                     <li key={i}
                                         className={`hover:bg-sky-300 hover:text-white text-sm cursor-pointer px-4 py-2
                                  ${alInfo?.toLowerCase() === bankname?.toLowerCase() &&
@@ -138,6 +151,7 @@ const Selections = () => {
                                             handleBankSelect(alInfo)
                                             setCardSelected("")
                                             setSearchInput("")
+                                            window.scrollTo({top: 770, behavior:"smooth"})
                                         }}
                                     >
                                         {alInfo}
@@ -151,17 +165,18 @@ const Selections = () => {
                         <p className=''>Bank</p>
                         <p className=''><AiFillCaretDown size={20} /></p>
                     </div> */}
-                    <div className='mb-5  flex items-center justify-between bg-slate-100 rounded-md w-52 text-lg px-2'>
-                    <a href="#rvw"><p className=''>Review</p></a>
-                    <a href="#rvw"><MdOutlineReviews size={20}></MdOutlineReviews></a>
+                    <div onClick={() =>{scrollToSection('section3')}} className='mb-5  flex items-center justify-between bg-slate-100 rounded-md w-52 text-lg px-2 text-gray-600'>
+                    <p className=''>Review</p>
+                    <MdOutlineReviews size={20}></MdOutlineReviews>
                         
                     </div>
                     {/* <div  className='mb-5  flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'> */}
                         {/* <p className=''>Search</p>
                         <p><FiSearch size={20}></FiSearch></p> */}
-                       <div > 
-                        <input type="text" value={searchInput} placeholder='Search...' className=' mb-5 text-lg bg-slate-100 rounded-md w-52 px-2 outline-none'
-                        onChange={(e) => {
+                       <div className='flex justify-center items-center mb-5 bg-white px-2 rounded-md text-gray-600'> 
+                            <FiSearch  className=' text-lg mr-1 inline-block'/>
+                         <input type="text" value={searchInput} placeholder='Enter location or name' className=' text-lg outline-none '
+                            onChange={(e) => {
                             setSearchInput(e.target.value)
                             setCardSelected("")
                             setActiveCard(null)
@@ -169,13 +184,14 @@ const Selections = () => {
                             setSelected("")
                             setSelectedBank(null);
                             setSelectedCategory(null);
-                        }}
-                        onFocus={()=>{
+                            window.scrollTo({top: 770, behavior:"smooth"})
+                            }}
+                            onFocus={()=>{
                             setOpenBank(false)
                             setOpenCat(false)
-                        }}
-                        />
-                       </div>
+                            }}
+                            />
+                        </div>
                     {/* </div> */}
                     
                 </div>
@@ -213,7 +229,7 @@ const Selections = () => {
             
             
                 
-                {selectedCategory && <CategoryComponent allInfos={allInfos} selected={selected}       cardSelected={cardSelected} />}
+                {selectedCategory && <CategoryComponent  allInfos={allInfos} selected={selected}       cardSelected={cardSelected} />}
                 {selectedBank     && <BankComponent     allInfos={allInfos} selected={bankname}       cardSelected={cardSelected}/>}
                 {searchInput      &&  <SearchComponent  allInfos={allInfos} searchInput={searchInput} cardSelected={cardSelected}/>}
 

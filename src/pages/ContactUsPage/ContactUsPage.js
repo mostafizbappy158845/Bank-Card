@@ -5,7 +5,7 @@ import MainFooter from '../../components/Footer/MainFooter';
 const ContactUsPage = () => {
     return (
         <div>
-            <Header></Header>
+            {/* <Header></Header> */}
             <div className="bg-gray-100">
       {/* Contact Form Section */}
       <section className="container mx-auto py-8">
@@ -43,7 +43,7 @@ const ContactUsPage = () => {
         </div>
       </section>
     </div>
-            <MainFooter></MainFooter>
+            {/* <MainFooter></MainFooter> */}
         </div>
     );
 };

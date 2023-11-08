@@ -5,11 +5,11 @@ import MainFooter from '../../components/Footer/MainFooter';
 const AboutPage = () => {
     return (
         <div>
-            <Header></Header>
+            {/* <Header></Header> */}
             <div>
             <h1 className='text-4xl my-32 text-center'>This is about page</h1>
             </div>
-            <MainFooter></MainFooter>
+            {/* <MainFooter></MainFooter> */}
         </div>
     );
 };

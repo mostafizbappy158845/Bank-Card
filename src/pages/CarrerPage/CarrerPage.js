@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const CarrerPage = () => {
     return (
         <div>
-            <Header></Header>
+            {/* <Header></Header> */}
             {/* <div>
             <h1 className='text-4xl my-32 text-center'>This is Carrer page</h1>
             </div>
@@ -78,7 +78,7 @@ const CarrerPage = () => {
                 </div>
             </div>
 
-            <MainFooter></MainFooter>
+            {/* <MainFooter></MainFooter> */}
         </div>
     );
 };
