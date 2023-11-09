@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import aamra from '../../assets/images/aamra2-removebg-preview.png'
+// import aamra from '../../assets/images/WhatsApp_Image-removebg-preview.png'
 
 import { useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
@@ -22,7 +23,7 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className={`w-full shadow-md ${scrolled ? "sticky shadow-md z-50 top-0 bg-white transition duration-200 ease-in-out" : ""}`}>
+    <div className={`w-full shadow-md transition duration-700 ${scrolled ? "sticky shadow-md z-50 top-0 bg-white transition duration-600 ease-in-out" : ""}`}>
     
       <div className="max-w-[1400px] mx-auto p-4 flex items-center justify-between">
       {/* left */}
@@ -56,7 +57,7 @@ useEffect(() => {
 
       {/* mobile menu */}
       <div
-        className={`z-10  items-center space-y-10 flex md:hidden flex-col absolute left-0 top-20 h-screen w-screen bg-white
+        className={`z-20  items-center space-y-10 flex md:hidden flex-col absolute left-0 top-20 h-screen w-screen bg-white
           shadow-lg pt-4  ${open ? "flex" : "hidden"}
         `}
       >

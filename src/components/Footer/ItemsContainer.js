@@ -1,6 +1,7 @@
 import Item from "./Item";
 import { PRODUCTS, RESOURCES, COMPANY, SUPPORT } from "./Menus";
 import aamra from '../../assets/images/aamra2-removebg-preview.png'
+// import aamra from '../../assets/images/aamra-removebg-preview.png'
 
 const ItemsContainer = () => {
   return (

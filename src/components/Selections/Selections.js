@@ -71,7 +71,7 @@ const Selections = () => {
     
     return (
         <div>
-            <div className='mx-auto w-full px-4 md:px-10 py-2 md:py-5  bg-slate-200 sticky top-16 z-10'>
+            <div className='mx-auto w-full px-4 md:px-10 py-2 md:py-5  bg-slate-200 sticky top-16 z-30'>
                 {/* flex flex-col md:flex-cols-2 lg:flex-row   justify-between items-center */}
                 <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-normal">
                     <div className='w-52 relative mb-5 cursor-pointer'>
@@ -109,7 +109,7 @@ const Selections = () => {
                                             setCardSelected("")
                                             setSearchInput("")
                                             // scrollToSection('section1')
-                                            window.scrollTo({top: 770, behavior:"smooth"})
+                                            window.scrollTo({top: 870, behavior:"smooth"})
                                             
                                         }}
                                     >
@@ -151,7 +151,7 @@ const Selections = () => {
                                             handleBankSelect(alInfo)
                                             setCardSelected("")
                                             setSearchInput("")
-                                            window.scrollTo({top: 770, behavior:"smooth"})
+                                            window.scrollTo({top: 850, behavior:"smooth"})
                                         }}
                                     >
                                         {alInfo}
@@ -165,7 +165,7 @@ const Selections = () => {
                         <p className=''>Bank</p>
                         <p className=''><AiFillCaretDown size={20} /></p>
                     </div> */}
-                    <div onClick={() =>{scrollToSection('section3')}} className='mb-5  flex items-center justify-between bg-slate-100 rounded-md w-52 text-lg px-2 text-gray-600'>
+                    <div onClick={() =>{scrollToSection('section3')}} className='mb-5  flex items-center justify-between bg-slate-100 rounded-md w-52 text-lg px-2 text-gray-600 cursor-pointer'>
                     <p className=''>Review</p>
                     <MdOutlineReviews size={20}></MdOutlineReviews>
                         
@@ -184,7 +184,7 @@ const Selections = () => {
                             setSelected("")
                             setSelectedBank(null);
                             setSelectedCategory(null);
-                            window.scrollTo({top: 770, behavior:"smooth"})
+                            window.scrollTo({top: 870, behavior:"smooth"})
                             }}
                             onFocus={()=>{
                             setOpenBank(false)
@@ -204,7 +204,7 @@ const Selections = () => {
                             //  onClick={() => setCardSelected(card)}
                              onClick={() => handleCardSelected(card)}
                                 className={`border-2 rounded-md p-2 ${
-                                    activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                    activeCard === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
                                 } hover:bg-[#6499E9]`}>{card}
                             </button>
                             ):(

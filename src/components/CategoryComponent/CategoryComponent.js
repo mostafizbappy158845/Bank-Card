@@ -1,23 +1,10 @@
-import { useEffect, useState } from 'react';
 import vertical_banner2 from '../../assets/images/vertical_banner.svg'
 import TopBanner from '../TopBanner/TopBanner';
-const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) => {
 
-  // --Start For sticky and scroll ---
-  // const [isScrolled, setIsScrolled] = useState(false);
-  // useEffect(() => {
-  //     // Add a scroll event listener to track the scroll position
-  //     const handleScroll = () => {
-  //       setIsScrolled(window.scrollY > -530 );
-  //     };
+
+const CategoryComponent = ({ allInfos, selected, cardSelected }) => {
+
   
-  //     window.addEventListener('scroll', handleScroll);
-  
-  //     return () => {
-  //       // Clean up the event listener when the component unmounts
-  //       window.removeEventListener('scroll', handleScroll);
-  //     };
-  //   }, []);
 
   const filteredInfos = allInfos.filter((singleInfo) => singleInfo.category === selected);
   const doubleFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.cardtype === cardSelected)
@@ -26,7 +13,7 @@ const CategoryComponent = ({ allInfos, selected, filterCards, cardSelected }) =>
   return (
     <>
       {/* <div id="section1" className={`px-4 bg-red-100 ${isScrolled? 'pt-0' : 'pt-48' } `}> */}
-      <div id="section1" className='px-4 bg-red-100 '>
+      <div id="" className='px-4 bg-red-100 '>
         <div className='mt-4 mx-4 flex flex-col md:flex-row justify-between'>
           <div >
             <p className=' texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex   mt-4 capitalize gap-4'><span className='text-rose-500 font-semibold'>{selected} </span></p>

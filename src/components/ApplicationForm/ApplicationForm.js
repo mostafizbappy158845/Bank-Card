@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import Header from '../Navbar/Header';
-import MainFooter from '../Footer/MainFooter';
 
 const ApplicationForm = () => {
   const [formData, setFormData] = useState({
@@ -50,7 +48,6 @@ const ApplicationForm = () => {
 
   return (
     <>
-      <Header></Header>
       <div className="bg-gray-100  py-8">
         <div className="container mx-auto">
           <h1 className="text-3xl font-bold text-center mb-8">Job Application</h1>
@@ -118,7 +115,6 @@ const ApplicationForm = () => {
           </div>
         </div>
       </div>
-      <MainFooter></MainFooter>
     </>
   );
 };
