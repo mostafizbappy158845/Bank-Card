@@ -35,7 +35,7 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
                   {/* <div className='flex '> */}
                   <div className='mb-4 text-lg text-center  md:text-xl lg:text-2xl font-serif font-medium  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} </div>
                   <div className=' flex justify-between'>
-                    <div className='font-medium  text-left'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl lg:text-left'>{singleInfo.discountdetail}</span><span className=''> & Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype} {singleInfo.location}</span></div>
+                    <div className='font-medium  text-left'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl lg:text-left'>{singleInfo.discountdetail}</span><span className=''> & Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}  </span><span className='block my-2 '>{singleInfo.location}</span> </div>
                     <div className='font-medium text-left uppercase text-xl'> <span className='text-red-500'>{singleInfo.bankshortname}</span> <span className='text-blue-800 '>{singleInfo.cardcategory}</span></div>
                   </div>
 
@@ -53,7 +53,7 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
 
 
         </div>
-        <div className="right-section px-4 mt-4 md:mt-0   w-full  md:w-1/4 lg:w-1/6 flex  justify-center ">
+        <div className="right-section px-4 mt-4 md:mt-0   w-full  md:w-1/4 lg:w-1/6">
 
           {/* Display your image here */}
           <img className='w-full ' src={vertical_banner2} alt="vertical-banner" />

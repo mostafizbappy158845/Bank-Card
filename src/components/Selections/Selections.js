@@ -151,7 +151,7 @@ const Selections = () => {
                                             handleBankSelect(alInfo)
                                             setCardSelected("")
                                             setSearchInput("")
-                                            window.scrollTo({top: 850, behavior:"smooth"})
+                                            window.scrollTo({top: 870, behavior:"smooth"})
                                         }}
                                     >
                                         {alInfo}

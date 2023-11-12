@@ -149,5 +149,50 @@
     "name": "Fantasy kingdom",
     "location": "Gulshan",
     "city": "Dhaka"
+  },
+  {
+    "id": 11,
+    "bankfullname": "Jamuna Bank",
+    "bankshortname": "JB",
+    "cardtype": "ATM Card",
+    "typeofcard": "Platinum",
+    "cardcategory": "Mastercard",
+    "discountdetail": "10% OFF",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Hotel",  
+    "name": "Bhooter Adda",
+    "location": "Gulshan",
+    "city": "Dhaka"
+  },
+  {
+    "id": 12,
+    "bankfullname": "Brac Bank",
+    "bankshortname": "BB",
+    "cardtype": "Credit Card",
+    "typeofcard": "Gold",
+    "cardcategory": "Visa",
+    "discountdetail": "12% OFF",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Hotel",  
+    "name": "Sarina",
+    "location": "Banani",
+    "city": "Dhaka"
+  },
+  {
+    "id": 13,
+    "bankfullname": "Islamic Bank",
+    "bankshortname": "BB",
+    "cardtype": "Debit Card",
+    "typeofcard": "Classic",
+    "cardcategory": "Visa",
+    "discountdetail": "10% OFF",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Restaurant",  
+    "name": "Peshwarain",
+    "location": "Jatrabari",
+    "city": "Dhaka"
   }
 ]

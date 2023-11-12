@@ -13,7 +13,7 @@ const CategoryComponent = ({ allInfos, selected, cardSelected }) => {
   return (
     <>
       {/* <div id="section1" className={`px-4 bg-red-100 ${isScrolled? 'pt-0' : 'pt-48' } `}> */}
-      <div id="" className='px-4 bg-red-100 '>
+      <div id="" className='px-4 bg-gray-100 pb-4'>
         <div className='mt-4 mx-4 flex flex-col md:flex-row justify-between'>
           <div >
             <p className=' texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex   mt-4 capitalize gap-4'><span className='text-rose-500 font-semibold'>{selected} </span></p>
@@ -23,18 +23,17 @@ const CategoryComponent = ({ allInfos, selected, cardSelected }) => {
 
         </div>
         <hr className='m-4 w-32 h-1 bg-gray-500 ' />
-        <div className='main-part flex flex-col md:flex-row '>
-          <div className="left-seection  h-fit w-full md:w-3/4 lg:w-5/6 grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
+        {/* <div className='main-part flex flex-col md:flex-row'> */}
+        <div className='main-part flex  flex-col md:flex-row '>
+          <div className=" left-seection md:h-fit w-full md:w-3/4 lg:w-5/6 grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
             {/* Create a 2xn grid of information */}
-            {/*  singleinfo.filter( singleinfo.category===selected) */}
-            {/* allInfos.filter((singleInfo) => singleInfo.category === selected) #6499E9*/}
             {
               mainFiltered.length > 0 ? (
                 mainFiltered
                   .map((singleInfo, i) => (
-                    <div key={i} className="info-item bg-white py-8 flex flex-col lg:flex-row  border rounded-md pr-8 pl-2
+                    <div key={i} className="info-item md:h-fit bg-white py-8 flex flex-col lg:flex-row  border rounded-md pr-8 pl-2
                        shadow-lg transform hover:scale-105 duration-300 delay-150  transition  text-center lg:text-left">
-                      <div className='md:w-2/6 flex justify-center items-center  text-lg  md:text-xl lg:text-2xl font-serif font-normal md:font-semibold   mr-2 md:mr-4 '>{singleInfo.name}
+                      <div className='md:w-2/6 flex  items-center  text-lg  md:text-xl lg:text-2xl font-serif font-normal md:font-semibold   mr-2 md:mr-4 '>{singleInfo.name}
                       </div>
 
                       <div className='flex flex-col sm:flex-row md:w-4/6'>
@@ -54,10 +53,10 @@ const CategoryComponent = ({ allInfos, selected, cardSelected }) => {
 
 
           </div>
-          <div className="right-section px-4 mt-4 md:mt-0   w-full md:w-1/4 lg:w-1/6 flex  justify-center ">
+          <div className="right-section ml-4 mt-4 md:mt-0 w-full md:w-1/4 lg:w-1/6 ">
 
             {/* Display your image here */}
-            <img className='w-full   object-contain' src={vertical_banner2} alt="vertical-banner" />
+            <img className='w-full ' src={vertical_banner2} alt="vertical-banner" />
           </div>
 
         </div>
