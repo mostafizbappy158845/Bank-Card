@@ -8,8 +8,7 @@ import CategoryComponent from '../CategoryComponent/CategoryComponent';
 import BankComponent from '../BankComponent/BankComponent';
 import HotOffer from '../HotOffer/HotOffer';
 import SearchComponent from '../SearchComponent/SearchComponent';
-// import { Users } from '../../../public/data.json
-// import AllInfo from '../../data.json'
+
 
 const Selections = () => {
     const [allInfos, setAllInfos] = useState([])
@@ -20,7 +19,7 @@ const Selections = () => {
     const [openBank, setOpenBank] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedBank, setSelectedBank] = useState(null);
-    const [cardSelected, setCardSelected] = useState(false); //null to false
+    const [cardSelected, setCardSelected] = useState(false); 
     //---//
     const [searchInput, setSearchInput] = useState("");
     const [activeCard, setActiveCard] = useState(null);
@@ -31,33 +30,24 @@ const Selections = () => {
 
     useEffect(() => {
         fetch("data.json")
-            //https://restcountries.com/v2/all?fields=name
             .then((res) => res.json())
             .then((data) => {
                 setAllInfos(data);
-                // setItems(data);
             });
     }, []);
 
     const handleCategorySelect = (cat) => {
         setSelectedCategory(cat);
-        // setBankname("")
-        // setSelectedBank(selectedBank);
         setSearchInput(null)
-        // setSearchInput(activeCard)
         setActiveCard(null);
         };
     const handleBankSelect = (cat) => {
         setSelectedBank(cat);
-        // setSelected("")
-        // setSelectedCategory(null);
         setSearchInput(null)
-        // setActiveCard(null);
         setActiveCard(null);
-        // localStorage.setItem(cat);
         };
     const handleCardSelected = (card) =>{
-        setCardSelected(card); //setCardSelected(card)
+        setCardSelected(card); 
         setActiveCard(card);
         console.log(setCardSelected)
         console.log(setActiveCard)
@@ -72,12 +62,8 @@ const Selections = () => {
         }
       };
     // --End For sticky and scroll ---
-    // const anySelect = selectedCategory || selectedBank || searchInput;
-    // const bothEmpty = setSelectedCategory(null) && setSelectedBank(null);
-    // const isSelectionMade =
-    // selectedCategory !== null || selectedBank !== null || cardSelected !== null;
+   
     const anySelect =  searchInput ||(selectedBank || selectedCategory)
-    // const empty = ()=> setSelectedCategory(false) && setSelectedBank(false);
     
     return (
         <div>
@@ -90,13 +76,7 @@ const Selections = () => {
                             setOpenBank(false)
                         }} className={`flex items-center justify-between text-lg  bg-slate-100 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
 
-                            {/* <p className=''>{selected
-                                ? selected?.length > 15
-                                    ? selected?.substring(0, 15) + "..."
-                                    : selected
-                                : "Category"}</p> */}
-
-                            {/* ---- Start New button condition code  --- */}
+                         {/* ---- Start New button condition code  --- */}
                             {selected ? ( // Checking bankname existence
             <>
                 <div className='flex '>
@@ -110,8 +90,8 @@ const Selections = () => {
                         setCardSelected(null)
                     }}
                     className='mr-1  hover:text-red-600 '>
-                    {/* Your button content goes here */}
-                    {/* For example: */}
+                    {/* Button content goes here */}
+                    
                     <RxCrossCircled size={20} />
                 </button>
                 <p onClick={() =>{
@@ -146,9 +126,7 @@ const Selections = () => {
                                             "bg-sky-400 text-white"
                                             }`}
                                         onClick={() => {
-                                            // if(country?.name?.toLowerCase() !== selected.toLowerCase() ){
-                                            //     setSelected(country.name);
-                                            // }
+                                            
                                             setSelected(alInfo);
                                             setOpenCat(false)
                                             handleCategorySelect(alInfo)
@@ -174,11 +152,7 @@ const Selections = () => {
                              }} 
                              className={` flex items-center justify-between text-lg  bg-slate-100 rounded-sm px-1 ${!bankname && "text-gray-600"}`}>
 
-                            {/* <p className=''>{bankname
-                                ? bankname?.length > 15
-                                    ?  bankname?.substring(0, 15) + "..."
-                                    : bankname
-                                : "Bank"}</p> */}
+                            
                  {/*---- start New button condition code  ---*/}
                             {bankname ? ( // Checking bankname existence
             <>
@@ -192,8 +166,8 @@ const Selections = () => {
                         setCardSelected(null)
                     }}
                 className='mr-1 hover:text-red-600'>
-                    {/* Your button content goes here */}
-                    {/* For example: */}
+                    {/* Button content goes here */}
+                    
                     <RxCrossCircled size={20} />
                 </button>
                 <p onClick={() =>{
@@ -244,19 +218,13 @@ const Selections = () => {
                         </ul>
 
                     </div>
-                    {/* <div className='flex items-center justify-between text-lg w-52 bg-slate-200 rounded-md px-2'>
-                        <p className=''>Bank</p>
-                        <p className=''><AiFillCaretDown size={20} /></p>
-                    </div> */}
+                    
                     <div onClick={() =>{scrollToSection('section3')}} className='mb-5  flex items-center justify-between bg-slate-100 rounded-md w-52 text-lg px-2 text-gray-600 cursor-pointer'>
                     <p className=''>Review</p>
                     <MdOutlineReviews size={20}></MdOutlineReviews>
                         
                     </div>
-                    {/* <div  className='mb-5  flex items-center justify-between text-lg bg-slate-200 rounded-md w-52 px-2'> */}
-                        {/* <p className=''>Search</p>
-                        <p><FiSearch size={20}></FiSearch></p> */}
-                       <div className='flex justify-center items-center mb-5 bg-white px-2 rounded-md text-gray-600'> 
+                    <div className='flex justify-center items-center mb-5 bg-white px-2 rounded-md text-gray-600'> 
                             <FiSearch  className=' text-lg mr-1 inline-block'/>
                          <input type="text" value={searchInput} placeholder='Enter location or name' className=' text-lg outline-none '
                             onChange={(e) => {

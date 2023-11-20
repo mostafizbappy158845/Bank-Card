@@ -9,7 +9,8 @@ import { Pagination } from "swiper/modules";
 import avatar from "../../assets/images/avatar.png";
 const Review = () => {
   return (
-    <section id="section3" className="text-center pt-20 mx-4" data-aos="zoom-in" data-aos-duration="2000">
+    <section id="section3">
+    <div className="text-center pt-20 mx-4" data-aos="zoom-in" data-aos-duration="2000">
       <p className="text-primary text-2xl text-rose-600 font-mono">Happy Clients</p>
       <h1 className="md:text-4xl text-2xl mt-1 font-semibold font-mono">
         Client's Say About Us
@@ -132,6 +133,7 @@ const Review = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+    </div>
     </section>
   );
 };
