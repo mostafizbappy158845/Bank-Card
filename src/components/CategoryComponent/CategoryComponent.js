@@ -2,13 +2,61 @@ import vertical_banner2 from '../../assets/images/vertical_banner.svg'
 import TopBanner from '../TopBanner/TopBanner';
 
 
-const CategoryComponent = ({ allInfos, selected, cardSelected }) => {
+const CategoryComponent = ({ allInfos, selected, cardSelected,bankname }) => {
 
   
+  const filteredData = allInfos.filter((info) => {
+    if (selected && bankname && cardSelected) {
+      return (
+        info.category === selected &&
+        info.bankfullname === bankname &&
+        info.cardtype === cardSelected
+      );
+    } else if (selected && bankname) {
+      return info.category === selected && info.bankfullname === bankname;
+    } else if (selected && cardSelected) {
+      return info.category === selected && info.cardtype === cardSelected;
+    } else if (bankname && cardSelected) {
+      return info.bankfullname === bankname && info.cardtype === cardSelected;
+    } else if (selected) {
+      return info.category === selected;
+    } else if (bankname) {
+      return info.bankfullname === bankname;
+    } 
+    // else{
+    //   return selected=null && bankname=null
+    // }
+    // else if (cardSelected) {
+    //   return info.cardtype === cardSelected;
+    // }
+     // Display all data if no selections are made
+  });
+  // const filteredInfos = allInfos.filter((singleInfo) => singleInfo.category === selected);
+  // const doubleFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.cardtype === cardSelected)
+  // const mainFiltered = cardSelected ? doubleFiltered : filteredInfos
+  // const thirdFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.bankfullname===bankname && singleInfo.cardtype === cardSelected)
+  // const mainFiltered 
 
-  const filteredInfos = allInfos.filter((singleInfo) => singleInfo.category === selected);
-  const doubleFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.cardtype === cardSelected)
-  const mainFiltered = cardSelected ? doubleFiltered : filteredInfos
+  //-------   ------
+  // let mainFiltered;
+  // if( selected && bankname ){
+  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.bankfullname===bankname)
+  // }
+  // else if(selected && bankname && cardSelected ){
+  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.bankfullname===bankname && singleInfo.cardtype === cardSelected)
+  // }
+  // else if(selected && cardSelected ){
+  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.cardtype === cardSelected)
+  // }
+  // else if(bankname&&cardSelected) {
+  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.bankfullname === bankname  && singleInfo.cardtype === cardSelected);
+  // }
+  // else if(bankname) {
+  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.bankfullname === bankname);
+  // }
+  // else{
+  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected);
+  // }
 
   return (
     <>
@@ -16,7 +64,7 @@ const CategoryComponent = ({ allInfos, selected, cardSelected }) => {
       <div id="" className='px-4 bg-gray-100 pb-4'>
         <div className='mt-4 mx-4 flex flex-col md:flex-row justify-between'>
           <div >
-            <p data-aos="flip-down" data-aos-duration="2000" className=' texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex   mt-4 capitalize gap-4'><span className='text-rose-500 font-semibold'>{selected} </span></p>
+            <p data-aos="flip-down" data-aos-duration="2000" className=' texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex   mt-4 capitalize gap-4'><span className='text-rose-500 font-semibold'>{selected?selected: ""}</span><span> { bankname?<> <p>{bankname}</p></>   :""}</span></p>
 
           </div>
           {/* <div className='text-xl font-mono md:font-semibold border  bg-[#9EDDFF] hover:bg-[#6499E9] p-1 lg:p-2 rounded-md   '>Apply for card</div> */}
@@ -28,8 +76,8 @@ const CategoryComponent = ({ allInfos, selected, cardSelected }) => {
           <div className=" left-seection md:h-fit w-full md:w-3/4 lg:w-5/6 grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
             {/* Create a 2xn grid of information */}
             {
-              mainFiltered.length > 0 ? (
-                mainFiltered
+              filteredData.length > 0 ? (
+                filteredData
                   .map((singleInfo, i) => (
                     <div key={i} className="info-item md:h-fit bg-white py-8 flex flex-col lg:flex-row  border rounded-md pr-8 pl-2
                        shadow-lg transform hover:scale-105 duration-300 delay-150  transition  text-center lg:text-left"
@@ -64,7 +112,7 @@ const CategoryComponent = ({ allInfos, selected, cardSelected }) => {
         </div>
 
       </div>
-      <TopBanner></TopBanner>
+      {/* <TopBanner></TopBanner> */}
     </>
   );
 };

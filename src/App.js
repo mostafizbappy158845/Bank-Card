@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 // import ScrollToTop from 'react-router-scroll-top';
 import './App.css';
 // import aos
@@ -17,8 +17,15 @@ import ApplicationForm from './components/ApplicationForm/ApplicationForm';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import Header from './components/Navbar/Header';
 import MainFooter from './components/Footer/MainFooter';
+import { useEffect } from 'react';
 
 function App() {
+  const {pathname} = useLocation();
+  // console.log(pathname)
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, [pathname])
+  
 
      //Aos init
   Aos.init({
