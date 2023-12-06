@@ -19,7 +19,7 @@ const Selections = () => {
     const [openBank, setOpenBank] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedBank, setSelectedBank] = useState(null);
-    const [cardSelected, setCardSelected] = useState(false); 
+    const [cardSelected, setCardSelected] = useState(false);
     //---//
     const [searchInput, setSearchInput] = useState("");
     const [activeCard, setActiveCard] = useState(null);
@@ -40,31 +40,31 @@ const Selections = () => {
         setSelectedCategory(cat);
         setSearchInput(null)
         setActiveCard(null);
-        };
+    };
     const handleBankSelect = (cat) => {
         setSelectedBank(cat);
         setSearchInput(null)
         setActiveCard(null);
-        };
-    const handleCardSelected = (card) =>{
-        setCardSelected(card); 
+    };
+    const handleCardSelected = (card) => {
+        setCardSelected(card);
         setActiveCard(card);
         console.log(setCardSelected)
         console.log(setActiveCard)
-    }  
-    
+    }
+
 
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
-    
+
         if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
+            section.scrollIntoView({ behavior: 'smooth' });
         }
-      };
+    };
     // --End For sticky and scroll ---
-   
-    const anySelect =  searchInput ||(selectedBank || selectedCategory)
-    
+
+    const anySelect = searchInput || (selectedBank || selectedCategory)
+
     return (
         <div>
             <div className='mx-auto w-full px-4 md:px-10 py-2 md:py-5  bg-slate-200 sticky top-16 z-30'>
@@ -76,39 +76,39 @@ const Selections = () => {
                             setOpenBank(false)
                         }} className={`flex items-center justify-between text-lg  bg-slate-100 rounded-sm px-2 ${!selected && "text-gray-600"}`}>
 
-                         {/* ---- Start New button condition code  --- */}
+                            {/* ---- Start New button condition code  --- */}
                             {selected ? ( // Checking bankname existence
-            <>
-                <div className='flex '>
-                <button onClick={(e) => {
-                    
-                        e.stopPropagation(); // Prevent event propagation to the parent div
-                        setSelectedCategory(false); // Set setOpenBank to false when the button is clicked
-                        setSelected("")
-                        setActiveCard(null);
-                        
-                        setCardSelected(null)
-                    }}
-                    className='mr-1  hover:text-red-600 '>
-                    {/* Button content goes here */}
-                    
-                    <RxCrossCircled size={20} />
-                </button>
-                <p onClick={() =>{
-                             setOpenBank(!openBank)
-                            setOpenCat(false)
-                             }}
-                              className=''>
-                 
-                    {/* Displaying bankname with an ellipsis if its length exceeds 15 characters */}
-                    {selected?.length > 15 ? `${selected?.substring(0, 15)}...` : selected}
-                </p>
-                </div>
-            </>
-        ) : (
-            <p
-            className=''>Category</p>
-        )}
+                                <>
+                                    <div className='flex '>
+                                        <button onClick={(e) => {
+
+                                            e.stopPropagation(); // Prevent event propagation to the parent div
+                                            setSelectedCategory(false); // Set setOpenBank to false when the button is clicked
+                                            setSelected("")
+                                            setActiveCard(null);
+
+                                            setCardSelected(null)
+                                        }}
+                                            className='mr-1  hover:text-red-600 '>
+                                            {/* Button content goes here */}
+
+                                            <RxCrossCircled size={20} />
+                                        </button>
+                                        <p onClick={() => {
+                                            setOpenBank(!openBank)
+                                            setOpenCat(false)
+                                        }}
+                                            className=''>
+
+                                            {/* Displaying bankname with an ellipsis if its length exceeds 15 characters */}
+                                            {selected?.length > 15 ? `${selected?.substring(0, 15)}...` : selected}
+                                        </p>
+                                    </div>
+                                </>
+                            ) : (
+                                <p
+                                    className=''>Category</p>
+                            )}
                             {/* ---- End New button condition code  --- */}
 
                             <p className=''>< AiFillCaretDown size={20} className={`${openCat && "rotate-180"}`} /></p>
@@ -119,22 +119,22 @@ const Selections = () => {
                             {
                                 //  allInfos.map((alInfo, i) => (
                                 uniqueCategorys.map((alInfo, i) => (
-                                    
+
                                     <li key={i}
                                         className={`hover:bg-sky-300 hover:text-white text-sm cursor-pointer px-2 py-2
                                  ${alInfo?.toLowerCase() === selected?.toLowerCase() &&
                                             "bg-sky-400 text-white"
                                             }`}
                                         onClick={() => {
-                                            
+
                                             setSelected(alInfo);
                                             setOpenCat(false)
                                             handleCategorySelect(alInfo)
                                             setCardSelected("")
                                             setSearchInput("")
                                             // scrollToSection('section1')
-                                            window.scrollTo({top: 870, behavior:"smooth"})
-                                            
+                                            window.scrollTo({ top: 870, behavior: "smooth" })
+
                                         }}
                                     >
                                         {alInfo}
@@ -145,47 +145,47 @@ const Selections = () => {
 
                     </div>
                     <div className='w-52 relative mb-5 cursor-pointer'>
-                        <div 
-                        onClick={() =>{
-                             setOpenBank(!openBank)
-                            setOpenCat(false)
-                             }} 
-                             className={` flex items-center justify-between text-lg  bg-slate-100 rounded-sm px-1 ${!bankname && "text-gray-600"}`}>
+                        <div
+                            onClick={() => {
+                                setOpenBank(!openBank)
+                                setOpenCat(false)
+                            }}
+                            className={` flex items-center justify-between text-lg  bg-slate-100 rounded-sm px-1 ${!bankname && "text-gray-600"}`}>
 
-                            
-                 {/*---- start New button condition code  ---*/}
+
+                            {/*---- start New button condition code  ---*/}
                             {bankname ? ( // Checking bankname existence
-            <>
-                <div className='flex'>
-                <button onClick={(e) => {
-                        e.stopPropagation(); // Prevent event propagation to the parent div
-                        setOpenBank(false); // Set setOpenBank to false when the button is clicked
-                        setBankname('')
-                        setSelectedBank(false)
-                        setActiveCard(null);
-                        setCardSelected(null)
-                    }}
-                className='mr-1 hover:text-red-600'>
-                    {/* Button content goes here */}
-                    
-                    <RxCrossCircled size={20} />
-                </button>
-                <p onClick={() =>{
-                             setOpenBank(!openBank)
-                            setOpenCat(false)
-                            // setSelectedBank('')
-                             }}
-                              className=''>
-                 
-                    {/* Displaying bankname with an ellipsis if its length exceeds 15 characters */}
-                    {bankname?.length > 15 ? `${bankname?.substring(0, 15)}...` : bankname}
-                </p>
-                </div>
-            </>
-        ) : (
-            <p
-            className=''>Bank</p>
-        )}
+                                <>
+                                    <div className='flex'>
+                                        <button onClick={(e) => {
+                                            e.stopPropagation(); // Prevent event propagation to the parent div
+                                            setOpenBank(false); // Set setOpenBank to false when the button is clicked
+                                            setBankname('')
+                                            setSelectedBank(false)
+                                            setActiveCard(null);
+                                            setCardSelected(null)
+                                        }}
+                                            className='mr-1 hover:text-red-600'>
+                                            {/* Button content goes here */}
+
+                                            <RxCrossCircled size={20} />
+                                        </button>
+                                        <p onClick={() => {
+                                            setOpenBank(!openBank)
+                                            setOpenCat(false)
+                                            // setSelectedBank('')
+                                        }}
+                                            className=''>
+
+                                            {/* Displaying bankname with an ellipsis if its length exceeds 15 characters */}
+                                            {bankname?.length > 15 ? `${bankname?.substring(0, 15)}...` : bankname}
+                                        </p>
+                                    </div>
+                                </>
+                            ) : (
+                                <p
+                                    className=''>Bank</p>
+                            )}
                             {/* End New button condition code  */}
 
                             <p className=''>< AiFillCaretDown size={20} className={`${openBank && "rotate-180"}`} /></p>
@@ -194,9 +194,9 @@ const Selections = () => {
                             }`}>
 
                             {
-                                
+
                                 uniqueBank.map((alInfo, i) => (
-                                    
+
                                     <li key={i}
                                         className={`hover:bg-sky-300 hover:text-white text-sm cursor-pointer px-4 py-2
                                  ${alInfo?.toLowerCase() === bankname?.toLowerCase() &&
@@ -208,7 +208,7 @@ const Selections = () => {
                                             handleBankSelect(alInfo)
                                             setCardSelected("")
                                             setSearchInput("")
-                                            window.scrollTo({top: 870, behavior:"smooth"})
+                                            window.scrollTo({ top: 870, behavior: "smooth" })
                                         }}
                                     >
                                         {alInfo}
@@ -218,85 +218,108 @@ const Selections = () => {
                         </ul>
 
                     </div>
-                    
-                    <div onClick={() =>{scrollToSection('section3')}} className='mb-5  flex items-center justify-between bg-slate-100 rounded-md w-52 text-lg px-2 text-gray-600 cursor-pointer'>
-                    <p className=''>Review</p>
-                    <MdOutlineReviews size={20}></MdOutlineReviews>
-                        
+
+                    <div onClick={() => { scrollToSection('section3') }} className='mb-5  flex items-center justify-between bg-slate-100 rounded-md w-52 text-lg px-2 text-gray-600 cursor-pointer'>
+                        <p className=''>Review</p>
+                        <MdOutlineReviews size={20}></MdOutlineReviews>
+
                     </div>
-                    <div className='flex justify-center items-center mb-5 bg-white px-2 rounded-md text-gray-600'> 
-                            <FiSearch  className=' text-lg mr-1 inline-block'/>
-                         <input type="text" value={searchInput} placeholder='Enter location or name' className=' text-lg outline-none '
+                    <div className='flex justify-center items-center mb-5 bg-white px-2 rounded-md text-gray-600'>
+                        <FiSearch className=' text-lg mr-1 inline-block' />
+                        <input type="text" value={searchInput} placeholder='Enter location or name' className=' text-lg outline-none '
                             onChange={(e) => {
-                            setSearchInput(e.target.value)
-                            setCardSelected("")
-                            setActiveCard(null)
-                            setBankname("")
-                            setSelected("")
-                            setSelectedBank(null);
-                            setSelectedCategory(null);
-                            window.scrollTo({top: 870, behavior:"smooth"})
+                                setSearchInput(e.target.value)
+                                setCardSelected("")
+                                setActiveCard(null)
+                                setBankname("")
+                                setSelected("")
+                                setSelectedBank(null);
+                                setSelectedCategory(null);
+                                window.scrollTo({ top: 870, behavior: "smooth" })
                             }}
-                            onFocus={()=>{
-                            setOpenBank(false)
-                            setOpenCat(false)
+                            onFocus={() => {
+                                setOpenBank(false)
+                                setOpenCat(false)
                             }}
-                            />
-                        </div>
+                        />
+                    </div>
                     {/* </div> */}
-                    
+
                 </div>
                 <div className=''>
-                <div className="wrapper">
-                    <div className="card-grp flex flex-row  items-center gap-10 justify-center  font-normal ">
-                        {uniqueCards.map((card, i) => (
-                            !anySelect ?(
-                            <button disabled key={i}
-                            //  onClick={() => setCardSelected(card)}
-                             onClick={() => handleCardSelected(card)}
-                                className={`border-2 rounded-3xl px-6 py-2 ${
-                                    activeCard === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
-                                } hover:bg-[#6499E9]`}>{card}
-                            </button>
-                            ):(
-                                <button  key={i}
-                            //  onClick={() => setCardSelected(card)}
-                             onClick={() => handleCardSelected(card)}
-                                className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${
-                                    activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
-                                } hover:bg-[#6499E9]`}>{card}
-                            </button>
-                            )
-                        ))}
+                    <div className="wrapper">
+                        <div className="card-grp flex flex-row  items-center gap-10 justify-center  font-normal ">
+                            {uniqueCards.map((card, i) => (
+                                !anySelect ? (
+                                    <button disabled key={i}
+                                        //  onClick={() => setCardSelected(card)}
+                                        onClick={() => handleCardSelected(card)}
+                                        className={`border-2 rounded-3xl px-6 py-2 ${activeCard === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
+                                            } hover:bg-[#6499E9]`}>{card}
+                                    </button>
+                                ) : (
+                                    <button key={i}
+                                        //  onClick={() => setCardSelected(card)}
+                                        onClick={() => handleCardSelected(card)}
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                            } hover:bg-[#6499E9]`}>{card}
+                                    </button>
+                                )
+
+
+                            ))}
+
+                        </div>
+
                     </div>
                 </div>
-            </div>
-            </div>
+                {/* new card filter section start */}
+                <div className='flex items-center justify-center  gap-10 '>
+                <div className='flex flex-row  items-center gap-10 justify-center  font-normal'>
+                    <button
+                        className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
+                                             hover:bg-[#6499E9]'>Visa Card</button>
+                    <button className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
+                                             hover:bg-[#6499E9]'>MasterCard</button>
+                </div>
+                <div className='flex flex-row  items-center gap-10 justify-center  font-normal'>
+                    <button
+                        className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
+                                             hover:bg-[#6499E9]'>Gold Card</button>
+                    <button className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
+                                             hover:bg-[#6499E9]'>Silver Card</button>
+                    <button className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
+                                             hover:bg-[#6499E9]'>Platinum Card</button>
+                </div>
+                </div>
+            </div >
 
 
             {/* <Card allCards={allInfos} handleCard = {}></Card> */}
-            
-            <TopBanner></TopBanner>
-            
-            {/* {(!isSelectionMade || !anySelect) && <HotOffer />} */}
-            {(selectedCategory || selectedBank) && (
-        <CategoryComponent
-        //   allInfos={filteredData}
-            allInfos={allInfos}
-          selected={selected}
-          bankname={bankname}
-          cardSelected={cardSelected}
-          anySelect = {anySelect}
-        />
-      )}
-                
-                {/* {(selectedCategory || selectedBank) && <CategoryComponent  allInfos={allInfos} selected={selected}  bankname={bankname}  cardSelected={cardSelected} />} */}
-                {/* {selectedBank     && <BankComponent     allInfos={allInfos} selected={bankname}       cardSelected={cardSelected}/>} */}
-                {searchInput      &&  <SearchComponent  allInfos={allInfos} searchInput={searchInput} cardSelected={cardSelected}/>}
 
-                {/* {!anySelect && <HotOffer/>} */}
-                {!anySelect  && <HotOffer/>}
-        </div>
+            < TopBanner ></TopBanner >
+
+            {/* {(!isSelectionMade || !anySelect) && <HotOffer />} */}
+            {
+                (selectedCategory || selectedBank) && (
+                    <CategoryComponent
+                        //   allInfos={filteredData}
+                        allInfos={allInfos}
+                        selected={selected}
+                        bankname={bankname}
+                        cardSelected={cardSelected}
+                        anySelect={anySelect}
+                    />
+                )
+            }
+
+            {/* {(selectedCategory || selectedBank) && <CategoryComponent  allInfos={allInfos} selected={selected}  bankname={bankname}  cardSelected={cardSelected} />} */}
+            {/* {selectedBank     && <BankComponent     allInfos={allInfos} selected={bankname}       cardSelected={cardSelected}/>} */}
+            {searchInput && <SearchComponent allInfos={allInfos} searchInput={searchInput} cardSelected={cardSelected} />}
+
+            {/* {!anySelect && <HotOffer/>} */}
+            {!anySelect && <HotOffer />}
+        </div >
     );
 };
 
