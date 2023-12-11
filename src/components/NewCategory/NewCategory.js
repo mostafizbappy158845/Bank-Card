@@ -1,64 +1,47 @@
+import React, { useEffect, useState } from 'react'
 import vertical_banner2 from '../../assets/images/vertical_banner.svg'
-import TopBanner from '../TopBanner/TopBanner';
 
+const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySelected }) => {
 
-const CategoryComponent = ({ allInfos, selected, cardSelected,bankname }) => {
+    const [list, setList] = useState(allInfos);
+    const applyFilters = () => {
+        let updatedList = allInfos;
+    
+        // category Filter
+        if (selected) {
+          updatedList = updatedList.filter(
+            (item) => item.category === selected
+          );
+        }
 
-  
-  const filteredData = allInfos.filter((info) => {
-    if (selected && bankname && cardSelected) {
-      return (
-        info.category === selected &&
-        info.bankfullname === bankname &&
-        info.cardtype === cardSelected
-      );
-    } else if (selected && bankname) {
-      return info.category === selected && info.bankfullname === bankname;
-    } else if (selected && cardSelected) {
-      return info.category === selected && info.cardtype === cardSelected;
-    } else if (bankname && cardSelected) {
-      return info.bankfullname === bankname && info.cardtype === cardSelected;
-    } else if (selected) {
-      return info.category === selected;
-    } else if (bankname) {
-      return info.bankfullname === bankname;
-    } 
-    // else{
-    //   return selected=null && bankname=null
-    // }
-    // else if (cardSelected) {
-    //   return info.cardtype === cardSelected;
-    // }
-     // Display all data if no selections are made
-  });
-  // const filteredInfos = allInfos.filter((singleInfo) => singleInfo.category === selected);
-  // const doubleFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.cardtype === cardSelected)
-  // const mainFiltered = cardSelected ? doubleFiltered : filteredInfos
-  // const thirdFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.bankfullname===bankname && singleInfo.cardtype === cardSelected)
-  // const mainFiltered 
+        // bank Filter
+    if (bankname) {
+        updatedList = updatedList.filter(
+          (item) => item.bankfullname === bankname
+        );
+      }
+          // cardtype Filter
+    if (cardSelected) {
+        updatedList = updatedList.filter(
+          (item) => item.cardtype === cardSelected
+        );
+      }
+      // typeofcardcategory Filter
+    if (cardcategorySelected) {
+        updatedList = updatedList.filter(
+          (item) => item.cardcategory === cardcategorySelected
+        );
+      }
 
-  //-------   ------
-  // let mainFiltered;
-  // if( selected && bankname ){
-  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.bankfullname===bankname)
-  // }
-  // else if(selected && bankname && cardSelected ){
-  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.bankfullname===bankname && singleInfo.cardtype === cardSelected)
-  // }
-  // else if(selected && cardSelected ){
-  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected && singleInfo.cardtype === cardSelected)
-  // }
-  // else if(bankname&&cardSelected) {
-  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.bankfullname === bankname  && singleInfo.cardtype === cardSelected);
-  // }
-  // else if(bankname) {
-  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.bankfullname === bankname);
-  // }
-  // else{
-  //    mainFiltered = allInfos.filter((singleInfo) => singleInfo.category === selected);
-  // }
+        setList(updatedList);
+    }
+    useEffect(() => {
+        applyFilters();
+      }, [selected, cardSelected, bankname, cardcategorySelected]);
+    
 
   return (
+    
     <>
       {/* <div id="section1" className={`px-4 bg-red-100 ${isScrolled? 'pt-0' : 'pt-48' } `}> */}
       <div id="" className='px-4 bg-gray-100 pb-4'>
@@ -77,8 +60,8 @@ const CategoryComponent = ({ allInfos, selected, cardSelected,bankname }) => {
             {/* Create a 2xn grid of information */}
             {
               // filteredData.length > 0 ?
-              filteredData.length ? (
-                filteredData
+              list.length ? (
+                list
                   .map((singleInfo, i) => (
                     <div key={i} className="info-item md:h-fit bg-white py-8 flex flex-col lg:flex-row  border rounded-md pr-8 pl-2
                        shadow-lg transform hover:scale-105 duration-300 delay-150  transition  text-center lg:text-left"
@@ -115,7 +98,8 @@ const CategoryComponent = ({ allInfos, selected, cardSelected,bankname }) => {
       </div>
       {/* <TopBanner></TopBanner> */}
     </>
-  );
-};
 
-export default CategoryComponent;
+  )
+        }
+
+export default NewCategory

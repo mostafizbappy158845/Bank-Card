@@ -8,6 +8,7 @@ import CategoryComponent from '../CategoryComponent/CategoryComponent';
 import BankComponent from '../BankComponent/BankComponent';
 import HotOffer from '../HotOffer/HotOffer';
 import SearchComponent from '../SearchComponent/SearchComponent';
+import NewCategory from '../NewCategory/NewCategory';
 
 
 const Selections = () => {
@@ -19,14 +20,18 @@ const Selections = () => {
     const [openBank, setOpenBank] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedBank, setSelectedBank] = useState(null);
-    const [cardSelected, setCardSelected] = useState(false);
+    const [cardSelected, setCardSelected] = useState(null);
+    //--//
+    const [cardcategorySelected, setCardcategorySelected] = useState(null);
     //---//
     const [searchInput, setSearchInput] = useState("");
     const [activeCard, setActiveCard] = useState(null);
 
-    const uniqueCards = [...new Set(allInfos.map(item => item.cardtype))];
+    const uniqueCardtype = [...new Set(allInfos.map(item => item.cardtype))];
     const uniqueCategorys = [...new Set(allInfos.map(item => item.category))];
     const uniqueBank = [...new Set(allInfos.map(item => item.bankfullname))];
+    const uniqueTypeofcard = [...new Set(allInfos.map(item => item.typeofcard))];
+    const uniqueCardcategory = [...new Set(allInfos.map(item => item.cardcategory))];
 
     useEffect(() => {
         fetch("data.json")
@@ -49,8 +54,14 @@ const Selections = () => {
     const handleCardSelected = (card) => {
         setCardSelected(card);
         setActiveCard(card);
-        console.log(setCardSelected)
-        console.log(setActiveCard)
+        // console.log(setCardSelected)
+        // console.log(setActiveCard)
+    }
+    const handleCardCategorySelected = (card) => {
+        // setCardcategorySelected(card);
+        setCardSelected(card);
+        setActiveCard(card);
+        
     }
 
 
@@ -249,7 +260,7 @@ const Selections = () => {
                 <div className=''>
                     <div className="wrapper">
                         <div className="card-grp flex flex-row  items-center gap-10 justify-center  font-normal ">
-                            {uniqueCards.map((card, i) => (
+                            {uniqueCardtype.map((card, i) => (
                                 !anySelect ? (
                                     <button disabled key={i}
                                         //  onClick={() => setCardSelected(card)}
@@ -275,22 +286,53 @@ const Selections = () => {
                 </div>
                 {/* new card filter section start */}
                 <div className='flex items-center justify-center  gap-10 '>
-                <div className='flex flex-row  items-center gap-10 justify-center  font-normal'>
-                    <button
-                        className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
+                    <div className='flex flex-row  items-center gap-10 justify-center  font-normal'>
+                        {/* <button
+                            className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
                                              hover:bg-[#6499E9]'>Visa Card</button>
-                    <button className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
-                                             hover:bg-[#6499E9]'>MasterCard</button>
-                </div>
-                <div className='flex flex-row  items-center gap-10 justify-center  font-normal'>
-                    <button
-                        className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
-                                             hover:bg-[#6499E9]'>Gold Card</button>
-                    <button className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
-                                             hover:bg-[#6499E9]'>Silver Card</button>
-                    <button className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
-                                             hover:bg-[#6499E9]'>Platinum Card</button>
-                </div>
+                        <button className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
+                                             hover:bg-[#6499E9]'>MasterCard</button> */}
+                       {uniqueTypeofcard.map((card, i) => (
+                                !anySelect ? (
+                                    <button disabled key={i}
+                                        //  onClick={() => setCardSelected(card)}
+                                        onClick={() => handleCardSelected(card)}
+                                        className={` border-2 rounded-3xl px-6 py-2 ${activeCard === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
+                                            } hover:bg-[#6499E9]`}>{card}
+                                    </button>
+                                ) : (
+                                    <button key={i}
+                                        //  onClick={() => setCardSelected(card)}
+                                        onClick={() => handleCardSelected(card)}
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                            } hover:bg-[#6499E9]`}>{card}
+                                    </button>
+                                )
+
+
+                            ))}                      
+                    </div>
+                    <div className='flex flex-row  items-center gap-10 justify-center  font-normal'>
+                    {uniqueCardcategory.map((card, i) => (
+                                !anySelect ? (
+                                    <button disabled key={i}
+                                        //  onClick={() => setCardSelected(card)}
+                                        onClick={() => handleCardCategorySelected(card)}
+                                        className={` border-2 rounded-3xl px-6 py-2 ${activeCard === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
+                                            } hover:bg-[#6499E9]`}>{card}
+                                    </button>
+                                ) : (
+                                    <button key={i}
+                                        //  onClick={() => setCardSelected(card)}
+                                        onClick={() => handleCardSelected(card)}
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                            } hover:bg-[#6499E9]`}>{card}
+                                    </button>
+                                )
+
+
+                            ))} 
+                    </div>
                 </div>
             </div >
 
@@ -301,16 +343,18 @@ const Selections = () => {
 
             {/* {(!isSelectionMade || !anySelect) && <HotOffer />} */}
             {
-                (selectedCategory || selectedBank) && (
-                    <CategoryComponent
+                (selectedCategory || selectedBank) && 
+                    // <CategoryComponent
+                    <NewCategory
                         //   allInfos={filteredData}
                         allInfos={allInfos}
                         selected={selected}
                         bankname={bankname}
                         cardSelected={cardSelected}
+                        cardcategorySelected={cardcategorySelected}
                         anySelect={anySelect}
                     />
-                )
+                
             }
 
             {/* {(selectedCategory || selectedBank) && <CategoryComponent  allInfos={allInfos} selected={selected}  bankname={bankname}  cardSelected={cardSelected} />} */}
