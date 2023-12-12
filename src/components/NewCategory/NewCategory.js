@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import vertical_banner2 from '../../assets/images/vertical_banner.svg'
 
-const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySelected }) => {
+const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySelected,typeofcardSelected }) => {
 
     const [list, setList] = useState(allInfos);
     const applyFilters = () => {
@@ -26,10 +26,16 @@ const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySel
           (item) => item.cardtype === cardSelected
         );
       }
-      // typeofcardcategory Filter
+      // cardcategory Filter
     if (cardcategorySelected) {
         updatedList = updatedList.filter(
           (item) => item.cardcategory === cardcategorySelected
+        );
+      }
+      //typeofcard Filter
+      if(typeofcardSelected){
+        updatedList = updatedList.filter(
+          (item) => item.typeofcard === typeofcardSelected
         );
       }
 
@@ -37,7 +43,7 @@ const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySel
     }
     useEffect(() => {
         applyFilters();
-      }, [selected, cardSelected, bankname, cardcategorySelected]);
+      }, [selected, cardSelected, bankname, cardcategorySelected,typeofcardSelected]);
     
 
   return (
@@ -71,7 +77,7 @@ const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySel
                       </div>
 
                       <div className='flex flex-col sm:flex-row md:w-4/6'>
-                        <div className='font-medium  w-2/3'>Enjoy <span className='font-bold text-red-500 text-lg md:text-xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-semibold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span> <p></p></div>
+                        <div className='font-medium  w-2/3'>Enjoy <span className='font-bold text-red-500 text-lg md:text-xl'>{singleInfo.discountdetail}</span><br /><span className=''>& Exciting Deals</span> <br /> with your<span className='font-semibold'> {singleInfo.bankshortname} {singleInfo.cardtype}</span> <p>{singleInfo.typeofcard}</p></div>
                         <div className='font-medium w-1/3  text-left'> <span className='text-red-500 font-semibold uppercase text-xl'>{singleInfo.bankshortname}</span> & <span className='text-blue-800 font-semibold uppercase text-xl'>{singleInfo.cardcategory}</span></div>
                         {/* <Link to={`/singleData/${singleInfo.id}`} className='p-2 border border-emerald-400'>Details</Link> */}
                       </div>

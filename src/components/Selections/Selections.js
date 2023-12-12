@@ -23,6 +23,7 @@ const Selections = () => {
     const [cardSelected, setCardSelected] = useState(null);
     //--//
     const [cardcategorySelected, setCardcategorySelected] = useState(null);
+    const [typeofcardSelected, setTypeofcardSelected] = useState(null);
     //---//
     const [searchInput, setSearchInput] = useState("");
     const [activeCard, setActiveCard] = useState(null);
@@ -52,15 +53,34 @@ const Selections = () => {
         setActiveCard(null);
     };
     const handleCardSelected = (card) => {
-        setCardSelected(card);
-        setActiveCard(card);
+        // setCardSelected(card);
+        // setActiveCard(card);
         // console.log(setCardSelected)
         // console.log(setActiveCard)
+        if (cardSelected === card) {
+            setCardSelected(null); // Deselect if already selected
+          } else {
+            setCardSelected(card); // Select if not selected
+          }
+    }
+
+    const handleTypeofcardSelected = (card)=>{
+        if(typeofcardSelected === card){
+            setTypeofcardSelected(null);
+        }
+        else{
+            setTypeofcardSelected(card)
+        }
     }
     const handleCardCategorySelected = (card) => {
         // setCardcategorySelected(card);
-        setCardSelected(card);
-        setActiveCard(card);
+        // setCardSelected(card);
+        // setActiveCard(card);
+        if (cardcategorySelected === card) {
+            setCardcategorySelected(null); // Deselect if already selected
+          } else {
+            setCardcategorySelected(card); // Select if not selected
+          }
         
     }
 
@@ -265,14 +285,14 @@ const Selections = () => {
                                     <button disabled key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 ${activeCard === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
+                                        className={`border-2 rounded-3xl px-6 py-2 ${cardSelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
                                             } hover:bg-[#6499E9]`}>{card}
                                     </button>
                                 ) : (
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardSelected === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
                                             } hover:bg-[#6499E9]`}>{card}
                                     </button>
                                 )
@@ -296,15 +316,15 @@ const Selections = () => {
                                 !anySelect ? (
                                     <button disabled key={i}
                                         //  onClick={() => setCardSelected(card)}
-                                        onClick={() => handleCardSelected(card)}
-                                        className={` border-2 rounded-3xl px-6 py-2 ${activeCard === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
+                                        onClick={() => handleTypeofcardSelected(card)}
+                                        className={` border-2 rounded-3xl px-6 py-2 ${typeofcardSelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
                                             } hover:bg-[#6499E9]`}>{card}
                                     </button>
                                 ) : (
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${typeofcardSelected === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
                                             } hover:bg-[#6499E9]`}>{card}
                                     </button>
                                 )
@@ -318,14 +338,14 @@ const Selections = () => {
                                     <button disabled key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardCategorySelected(card)}
-                                        className={` border-2 rounded-3xl px-6 py-2 ${activeCard === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
+                                        className={` border-2 rounded-3xl px-6 py-2 ${cardcategorySelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
                                             } hover:bg-[#6499E9]`}>{card}
                                     </button>
                                 ) : (
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
-                                        onClick={() => handleCardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${activeCard === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
+                                        onClick={() => handleCardCategorySelected(card)}
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardcategorySelected === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
                                             } hover:bg-[#6499E9]`}>{card}
                                     </button>
                                 )
@@ -352,6 +372,7 @@ const Selections = () => {
                         bankname={bankname}
                         cardSelected={cardSelected}
                         cardcategorySelected={cardcategorySelected}
+                        typeofcardSelected={typeofcardSelected}
                         anySelect={anySelect}
                     />
                 
