@@ -43,7 +43,7 @@ const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySel
     }
     useEffect(() => {
         applyFilters();
-      }, [selected, cardSelected, bankname, cardcategorySelected,typeofcardSelected]);
+      }, [selected, cardSelected,bankname, cardcategorySelected,typeofcardSelected]);
     
 
   return (

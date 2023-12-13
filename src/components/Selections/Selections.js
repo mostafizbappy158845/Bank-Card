@@ -66,10 +66,10 @@ const Selections = () => {
 
     const handleTypeofcardSelected = (card)=>{
         if(typeofcardSelected === card){
-            setTypeofcardSelected(null);
+            setTypeofcardSelected(null);// Deselect if already selected
         }
         else{
-            setTypeofcardSelected(card)
+            setTypeofcardSelected(card) // Select if not selected
         }
     }
     const handleCardCategorySelected = (card) => {
@@ -323,7 +323,7 @@ const Selections = () => {
                                 ) : (
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
-                                        onClick={() => handleCardSelected(card)}
+                                        onClick={() => handleTypeofcardSelected(card)}
                                         className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${typeofcardSelected === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
                                             } hover:bg-[#6499E9]`}>{card}
                                     </button>
