@@ -86,14 +86,14 @@ const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySel
 
                   ))
               ) : (
-                <p className='text-right font-semibold text-2xl text-black' >No {cardSelected} Available !!!</p>
+                <p className='text-right font-semibold text-2xl text-black' >Card Not Available !!!</p>
               )
             }
 
 
 
           </div>
-          <div className="right-section ml-4 mt-4 md:mt-0 w-full md:w-1/4 lg:w-1/6 " data-aos="zoom-in" data-aos-duration="2000" >
+          <div className="  right-section ml-4 mt-4 md:mt-0 w-full md:w-1/4 lg:w-1/6 " data-aos="zoom-in" data-aos-duration="2000" >
 
             {/* Display your image here */}
             <img className='w-full ' src={vertical_banner2} alt="vertical-banner" />

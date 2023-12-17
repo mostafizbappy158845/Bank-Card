@@ -26,7 +26,7 @@ const Selections = () => {
     const [typeofcardSelected, setTypeofcardSelected] = useState(null);
     //---//
     const [searchInput, setSearchInput] = useState("");
-    const [activeCard, setActiveCard] = useState(null);
+    // const [activeCard, setActiveCard] = useState(null);
 
     const uniqueCardtype = [...new Set(allInfos.map(item => item.cardtype))];
     const uniqueCategorys = [...new Set(allInfos.map(item => item.category))];
@@ -45,12 +45,16 @@ const Selections = () => {
     const handleCategorySelect = (cat) => {
         setSelectedCategory(cat);
         setSearchInput(null)
-        setActiveCard(null);
+        // setActiveCard(null);
+        setTypeofcardSelected(null)
+        setCardcategorySelected(null)
     };
     const handleBankSelect = (cat) => {
         setSelectedBank(cat);
         setSearchInput(null)
-        setActiveCard(null);
+        // setActiveCard(null);
+        setTypeofcardSelected(null)
+        setCardcategorySelected(null)
     };
     const handleCardSelected = (card) => {
         // setCardSelected(card);
@@ -76,11 +80,13 @@ const Selections = () => {
         // setCardcategorySelected(card);
         // setCardSelected(card);
         // setActiveCard(card);
-        if (cardcategorySelected === card) {
-            setCardcategorySelected(null); // Deselect if already selected
-          } else {
-            setCardcategorySelected(card); // Select if not selected
-          }
+        // if (cardcategorySelected === card) {
+        //     setCardcategorySelected(null); // Deselect if already selected
+        //   } else {
+        //     setCardcategorySelected(card); // Select if not selected
+        //   }
+        setCardcategorySelected(cardcategorySelected === card ? null : card);
+
         
     }
 
@@ -116,8 +122,9 @@ const Selections = () => {
                                             e.stopPropagation(); // Prevent event propagation to the parent div
                                             setSelectedCategory(false); // Set setOpenBank to false when the button is clicked
                                             setSelected("")
-                                            setActiveCard(null);
-
+                                            // setActiveCard(null);
+                                            setTypeofcardSelected(null)
+                                            setCardcategorySelected(null)
                                             setCardSelected(null)
                                         }}
                                             className='mr-1  hover:text-red-600 '>
@@ -193,8 +200,10 @@ const Selections = () => {
                                             setOpenBank(false); // Set setOpenBank to false when the button is clicked
                                             setBankname('')
                                             setSelectedBank(false)
-                                            setActiveCard(null);
+                                            // setActiveCard(null);
                                             setCardSelected(null)
+                                            setTypeofcardSelected(null)
+                                            setCardcategorySelected(null)
                                         }}
                                             className='mr-1 hover:text-red-600'>
                                             {/* Button content goes here */}
@@ -260,8 +269,10 @@ const Selections = () => {
                         <input type="text" value={searchInput} placeholder='Enter location or name' className=' text-lg outline-none '
                             onChange={(e) => {
                                 setSearchInput(e.target.value)
-                                setCardSelected("")
-                                setActiveCard(null)
+                                setCardSelected(null)
+                                // setActiveCard(null)
+                                setTypeofcardSelected(null)
+                                setCardcategorySelected(null)
                                 setBankname("")
                                 setSelected("")
                                 setSelectedBank(null);
@@ -285,15 +296,15 @@ const Selections = () => {
                                     <button disabled key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 ${cardSelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
-                                            } hover:bg-[#6499E9]`}>{card}
+                                        className={`border-2 rounded-3xl px-6 py-2 ${cardSelected === card ? 'bg-[#64BCC0] text-white cursor-pointer' : 'bg-[#64BCC0]'
+                                            } hover:bg-[#5BA9AF]`}>{card}
                                     </button>
                                 ) : (
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardSelected === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
-                                            } hover:bg-[#6499E9]`}>{card}
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardSelected === card ? 'bg-[#64BCC0] text-white' : 'bg-[#64BCC0]'
+                                            } hover:bg-[#5BA9AF]`}>{card}
                                     </button>
                                 )
 
@@ -317,15 +328,15 @@ const Selections = () => {
                                     <button disabled key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleTypeofcardSelected(card)}
-                                        className={` border-2 rounded-3xl px-6 py-2 ${typeofcardSelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
-                                            } hover:bg-[#6499E9]`}>{card}
+                                        className={` border-2 rounded-3xl px-6 py-2 ${typeofcardSelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#AFDB7F]'
+                                            } hover:bg-[#9CC571]`}>{card}
                                     </button>
                                 ) : (
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleTypeofcardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${typeofcardSelected === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
-                                            } hover:bg-[#6499E9]`}>{card}
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${typeofcardSelected === card ? 'bg-[#AFDB7F] text-white' : 'bg-[#AFDB7F]'
+                                            } hover:bg-[#9CC571]`}>{card}
                                     </button>
                                 )
 
@@ -338,15 +349,15 @@ const Selections = () => {
                                     <button disabled key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardCategorySelected(card)}
-                                        className={` border-2 rounded-3xl px-6 py-2 ${cardcategorySelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#9EDDFF]'
-                                            } hover:bg-[#6499E9]`}>{card}
+                                        className={` border-2 rounded-3xl px-6 py-2 ${cardcategorySelected === card ? 'bg-[#EF7EAD] cursor-pointer' : 'bg-[#EF7EAD]'
+                                            } hover:bg-[#D8729B]`}>{card}
                                     </button>
                                 ) : (
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardCategorySelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardcategorySelected === card ? 'bg-[#6499E9] text-white' : 'bg-[#9EDDFF]'
-                                            } hover:bg-[#6499E9]`}>{card}
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardcategorySelected === card ? 'bg-[#EF7EAD] text-white' : 'bg-[#EF7EAD]'
+                                            } hover:bg-[#D8729B]`}>{card}
                                     </button>
                                 )
 
@@ -380,7 +391,14 @@ const Selections = () => {
 
             {/* {(selectedCategory || selectedBank) && <CategoryComponent  allInfos={allInfos} selected={selected}  bankname={bankname}  cardSelected={cardSelected} />} */}
             {/* {selectedBank     && <BankComponent     allInfos={allInfos} selected={bankname}       cardSelected={cardSelected}/>} */}
-            {searchInput && <SearchComponent allInfos={allInfos} searchInput={searchInput} cardSelected={cardSelected} />}
+            {searchInput && 
+            <SearchComponent
+                         allInfos={allInfos} 
+                         searchInput={searchInput} 
+                         cardSelected={cardSelected} 
+                         cardcategorySelected={cardcategorySelected}
+                         typeofcardSelected={typeofcardSelected}
+                         />}
 
             {/* {!anySelect && <HotOffer/>} */}
             {!anySelect && <HotOffer />}

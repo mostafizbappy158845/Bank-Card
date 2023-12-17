@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import vertical_banner2 from '../../assets/images/vertical_banner.svg'
 
 
-const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSelected }) => {
+const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSelected,cardcategorySelected,typeofcardSelected }) => {
 
   // ....//
   //   const filteredInfos = allInfos.filter((singleInfo) => singleInfo.bankfullname === selected);
@@ -11,10 +11,42 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
   // ||singleInfo.category.toLowerCase().includes(searchInput)
   //...//
 
-  const filteredInfos = allInfos.filter((singleInfo) => singleInfo.name.toLowerCase().includes(searchInput.toLowerCase()) || singleInfo.location.toLowerCase().includes(searchInput.toLowerCase()));
-  const doubleFiltered = allInfos.filter((singleInfo) => (singleInfo.name.toLowerCase().includes(searchInput.toLowerCase()) || singleInfo.location.toLowerCase().includes(searchInput.toLowerCase())) && singleInfo.cardtype === cardSelected);
+  const [list, setList] = useState(allInfos);
+  const applyFilters = () => {
+      let updatedList = allInfos;
 
-  const mainFiltered = cardSelected ? doubleFiltered : filteredInfos
+      if(searchInput){
+        updatedList = updatedList.filter(
+          (item) => item.name.toLowerCase().includes(searchInput.toLowerCase())
+        )
+      }
+   // cardtype Filter
+    if (cardSelected) {
+      updatedList = updatedList.filter(
+        (item) => item.cardtype === cardSelected
+      );
+    }
+    // cardcategory Filter
+    if (cardcategorySelected) {
+      updatedList = updatedList.filter(
+        (item) => item.cardcategory === cardcategorySelected
+      );
+    }
+    if(typeofcardSelected){
+      updatedList = updatedList.filter(
+        (item) => item.typeofcard === typeofcardSelected
+      );
+    }
+    setList(updatedList);
+  }
+
+  useEffect(() => {
+    applyFilters();
+  }, [searchInput, cardSelected, cardcategorySelected,typeofcardSelected]);
+  // const filteredInfos = allInfos.filter((singleInfo) => singleInfo.name.toLowerCase().includes(searchInput.toLowerCase()) || singleInfo.location.toLowerCase().includes(searchInput.toLowerCase()));
+  // const doubleFiltered = allInfos.filter((singleInfo) => (singleInfo.name.toLowerCase().includes(searchInput.toLowerCase()) || singleInfo.location.toLowerCase().includes(searchInput.toLowerCase())) && singleInfo.cardtype === cardSelected);
+
+  // const mainFiltered = cardSelected ? doubleFiltered : filteredInfos
 
   return (
     <div className='bg-gray-100 py-4'>
@@ -27,8 +59,8 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
         <div className="left-seection  h-fit w-full md:w-3/4 lg:w-5/6 grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
 
           {
-            mainFiltered.length > 0 ? (
-              mainFiltered.map((singleInfo, i) => (
+            list.length ? (
+              list.map((singleInfo, i) => (
                 // <Link to={`/singleData/${singleInfo.id}`} >
                 <div key={i} className="info-item bg-white py-4  border rounded-md px-3 
                      shadow-lg transform hover:scale-105 duration-300 delay-150  transition overflow-hidden  text-center lg:text-left"
@@ -36,7 +68,7 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
                   {/* <div className='flex '> */}
                   <div className='mb-4 text-lg text-center  md:text-xl lg:text-2xl font-serif font-medium  mr-2 md:mr-4 lg:mr-8 uppercase'>{singleInfo.name} </div>
                   <div className=' flex justify-between'>
-                    <div className='font-medium  text-left'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl lg:text-left'>{singleInfo.discountdetail}</span><span className=''> & Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}  </span><span className='block my-2 '>{singleInfo.location}</span> </div>
+                    <div className='font-medium  text-left'>Enjoy <span className='font-bold text-red-500 text-lg md:text-2xl lg:text-left'>{singleInfo.discountdetail}</span><span className=''> & Exciting Deals</span> <br /> with your<span className='font-bold'> {singleInfo.bankshortname} {singleInfo.cardtype}  </span> {singleInfo.typeofcard}<span className='block my-2 '>{singleInfo.location}</span> </div>
                     <div className='font-medium text-left uppercase text-xl'> <span className='text-red-500'>{singleInfo.bankshortname}</span> <span className='text-blue-800 '>{singleInfo.cardcategory}</span></div>
                   </div>
 
