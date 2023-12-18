@@ -79,7 +79,7 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
 
               ))
             ) : (
-              <p className='text-right font-semibold text-2xl text-black'>No {cardSelected} available !!!</p>
+              <p className='text-right font-semibold text-2xl text-black'>No card available !!!</p>
             )
           }
 

@@ -51,11 +51,11 @@ const BestDeal = () => {
             <div className='font-medium lg:ml-8 pt-4'> <span className='text-red-500 font-bold uppercase text-xl'>MTB</span> & <span className='text-blue-800 font-bold uppercase text-xl'>visa</span> only</div>
           </div>
         </div>
-        <div className="right-section px-4 mt-4 w-full md:w-1/5 min-h-full flex items-center justify-center "
+        <div className="right-section px-4 mt-4 md:mt-0 w-full md:w-1/5 min-h-full flex items-center justify-center "
         data-aos="zoom-in" data-aos-duration="2000">
 
           {/* Display your image here */}
-          <img className='w-full h-full hidden lg:block' src={vertical_banner2} alt="vertical-banner" />
+          <img className='w-full h-full hidden md:block' src={vertical_banner2} alt="vertical-banner" />
           <img className='w-full h-full block md:hidden' src={vertical_banner} alt="vertical-banner" />
         </div>
 

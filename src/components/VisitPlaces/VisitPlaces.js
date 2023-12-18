@@ -53,7 +53,7 @@ const VisitPlaces = () => {
 
 
           </div>
-          <div className="right-section px-4 mt-4 w-full md:w-1/5 min-h-full flex items-center justify-center"
+          <div className="right-section md:px-4 mt-4 md:mt-0 w-full md:w-1/5 min-h-full flex items-center justify-center"
           data-aos="zoom-in" data-aos-duration="2000"
           >
 

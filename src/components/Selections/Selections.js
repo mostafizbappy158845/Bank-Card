@@ -290,7 +290,7 @@ const Selections = () => {
                 </div>
                 <div className=''>
                     <div className="wrapper">
-                        <div className="card-grp flex flex-row  items-center gap-10 justify-center  font-normal ">
+                        <div className="card-grp flex flex-row  items-center md:gap-10 justify-center  font-normal ">
                             {uniqueCardtype.map((card, i) => (
                                 !anySelect ? (
                                     <button disabled key={i}
@@ -303,7 +303,9 @@ const Selections = () => {
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardSelected === card ? 'bg-[#64BCC0] text-white' : 'bg-[#64BCC0]'
+                                        // {`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardSelected === card ? 'bg-[#64BCC0] text-white' : 'bg-[#64BCC0]'
+                                        //     } hover:bg-[#5BA9AF]`}
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardSelected === card ? 'bg-[#64BCC0] text-white font-semibold' : 'bg-[#64BCC0]'
                                             } hover:bg-[#5BA9AF]`}>{card}
                                     </button>
                                 )
@@ -316,8 +318,8 @@ const Selections = () => {
                     </div>
                 </div>
                 {/* new card filter section start */}
-                <div className='flex items-center justify-center  gap-10 '>
-                    <div className='flex flex-row  items-center gap-10 justify-center  font-normal'>
+                <div className='flex items-center flex-col sm:flex-row justify-center  md:gap-10 '>
+                    <div className='flex flex-row  items-center md:gap-10 justify-center  font-normal'>
                         {/* <button
                             className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
                                              hover:bg-[#6499E9]'>Visa Card</button>
@@ -335,7 +337,7 @@ const Selections = () => {
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleTypeofcardSelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${typeofcardSelected === card ? 'bg-[#AFDB7F] text-white' : 'bg-[#AFDB7F]'
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${typeofcardSelected === card ? 'bg-[#AFDB7F] text-white font-semibold' : 'bg-[#AFDB7F]'
                                             } hover:bg-[#9CC571]`}>{card}
                                     </button>
                                 )
@@ -356,7 +358,7 @@ const Selections = () => {
                                     <button key={i}
                                         //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardCategorySelected(card)}
-                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardcategorySelected === card ? 'bg-[#EF7EAD] text-white' : 'bg-[#EF7EAD]'
+                                        className={`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardcategorySelected === card ? 'bg-[#EF7EAD] text-white font-semibold' : 'bg-[#EF7EAD]'
                                             } hover:bg-[#D8729B]`}>{card}
                                     </button>
                                 )
