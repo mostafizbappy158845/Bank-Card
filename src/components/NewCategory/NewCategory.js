@@ -50,16 +50,16 @@ const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySel
     
     <>
       {/* <div id="section1" className={`px-4 bg-red-100 ${isScrolled? 'pt-0' : 'pt-48' } `}> */}
-      <div id="" className='px-4 bg-gray-100 pb-4'>
+      <div id="section1" className='px-4 bg-gray-100 pb-4'>
         <div className='mt-4 mx-4 flex flex-col md:flex-row justify-between'>
           <div >
-            <p data-aos="flip-down" data-aos-duration="2000" className=' texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex   mt-4 capitalize gap-4'><span className='text-rose-500 font-semibold'>{selected?selected: ""}</span><span> { bankname?<> <p>{bankname}</p></>   :""}</span></p>
+            <p data-aos="flip-down" data-aos-duration="2000" className='underline underline-offset-4 texl-xl md:text-2xl lg:text-4xl font-mono md:font-semibold flex   mt-4 mb-2 capitalize gap-4'><span className='text-rose-500 font-semibold'>{selected?selected: ""}</span><span> {bankname?bankname:""}</span></p>
 
           </div>
           {/* <div className='text-xl font-mono md:font-semibold border  bg-[#9EDDFF] hover:bg-[#6499E9] p-1 lg:p-2 rounded-md   '>Apply for card</div> */}
 
         </div>
-        <hr data-aos="flip-left" data-aos-duration="2000" className='m-4 w-32 h-1 bg-gray-500 ' />
+        {/* <hr data-aos="flip-left" data-aos-duration="2000" className='m-4 w-32 h-1 bg-gray-500 ' /> */}
         {/* <div className='main-part flex flex-col md:flex-row'> */}
         <div className='main-part flex  flex-col md:flex-row '>
           <div className=" left-seection md:h-fit w-full md:w-3/4 lg:w-5/6 grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
@@ -69,7 +69,7 @@ const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySel
               list.length ? (
                 list
                   .map((singleInfo, i) => (
-                    <div key={i} className="info-item md:h-fit bg-white py-8 flex flex-col lg:flex-row  border rounded-md pr-8 pl-2
+                    <div key={i} className="border-l-4 border border-l-black info-item md:h-fit bg-white py-8 flex flex-col lg:flex-row   rounded-md pr-8 pl-2
                        shadow-lg transform hover:scale-105 duration-300 delay-150  transition  text-center lg:text-left"
                        data-aos="zoom-in" data-aos-duration="2000"
                        >
@@ -93,7 +93,8 @@ const NewCategory = ({ allInfos, selected, cardSelected,bankname,cardcategorySel
 
 
           </div>
-          <div className="  right-section ml-4 mt-4 md:mt-0 w-full md:w-1/4 lg:w-1/6 " data-aos="zoom-in" data-aos-duration="2000" >
+          {/* items-start z-50 md:sticky md:top-[1020px] */}
+          <div className="  right-section ml-4 mt-4 md:mt-0 w-full md:w-1/4 lg:w-1/6 self-start  md:sticky md:top-[260px]" data-aos="zoom-in" data-aos-duration="2000" >
 
             {/* Display your image here */}
             <img className='w-full ' src={vertical_banner2} alt="vertical-banner" />

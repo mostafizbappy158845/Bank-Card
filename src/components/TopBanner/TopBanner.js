@@ -4,13 +4,11 @@ import img from '../../assets/images/bannerCard.png'
 const TopBanner = () => {
     return (
         <>
-            {/* // <div className='h-20 flex justify-center items-center bg-[#eeeded]'> */}
             <div className='hidden w-full h-[300px] px-8 mt-4 rounded-md'>
                 {/* <marquee behavior="" direction="" className="text-2xl font-mono font-semibold">Top Banner Ads</marquee> */}
                 <img className='w-full h-full' src={advertise} alt="" />
             </div>
-            {/* <div className=''> */}
-            {/* <div className=' bg-[#dfe1f1]  m-8  flex flex-col sm:flex-row justify-between'> */}
+            
             <div className=' bg-gray-100  m-8  grid grid-cols-1 md:grid-cols-2 gap-8'>
                 <div className='sm:w-1/2 ml-8 mt-4 h-auto' data-aos="flip-up" data-aos-duration="2000" data-aos-mirror="false" data-aos-offset="200">
                     <p className='text-3xl font-medium text-slate-800 uppercase mb-2'>Bank Services</p>
@@ -24,7 +22,7 @@ const TopBanner = () => {
                 <div className='sm:w-1/2 relative'  >
                     {/*  data-aos="fade-left" data-aos-duration="2000" data-aos-mirror="false" */}
                     <img src={img} alt="" className='md:absolute mb-8 md:mb-0  z-20' data-aos="flip-up" data-aos-duration="2000" data-aos-mirror="false"/>
-                    <img src={img} alt="" className='md:absolute top-[18%] left-[60%] mb-0 z-10' data-aos="flip-down" data-aos-duration="2000" data-aos-mirror="false"/>
+                    <img src={img} alt="" className='md:absolute md:top-[18%] md:left-[60%] mb-0 z-10' data-aos="flip-down" data-aos-duration="2000" data-aos-mirror="false"/>
                     
                     
                 </div>

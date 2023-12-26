@@ -41,13 +41,13 @@ useEffect(() => {
       {/* desktop menu */}
       <div className=" items-center mb-2  space-x-10 hidden md:flex">
         <NavLink to="/" className='p-2 rounded-md hover:bg-blue-400 hover:text-white '>Home</NavLink>
-        <NavLink to="/carrer"  className='p-2 rounded-md hover:bg-blue-400 hover:text-white '>Carrer</NavLink>
+        <NavLink to="/carrer"  className='p-2 rounded-md hover:bg-blue-400 hover:text-white '>Career</NavLink>
         
         
         <NavLink to="/contactus" className='p-2 rounded-md hover:bg-blue-400 hover:text-white'>
        
         ContactUs</NavLink> 
-        <NavLink to="/about"  className='p-2 rounded-md hover:bg-blue-400 hover:text-white '>About </NavLink>
+        {/* <NavLink to="/about"  className='p-2 rounded-md hover:bg-blue-400 hover:text-white '>About </NavLink> */}
     
         
        
@@ -63,9 +63,9 @@ useEffect(() => {
       >
         <NavLink to="/" onClick={() =>setOpen(false)}>Home</NavLink>
         
-        <NavLink to="/carrer" onClick={() =>setOpen(false)}>Carrer</NavLink>
+        <NavLink to="/carrer" onClick={() =>setOpen(false)}>Career</NavLink>
         <NavLink to="/contactus" onClick={() =>setOpen(false)}>ContactUs</NavLink>
-        <NavLink to="/about" onClick={() =>setOpen(false)}>About </NavLink>
+        {/* <NavLink to="/about" onClick={() =>setOpen(false)}>About </NavLink> */}
         <NavLink to="/login" onClick={() =>setOpen(false)}>Login</NavLink>
       </div>
     </div>

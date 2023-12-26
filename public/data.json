@@ -194,5 +194,20 @@
     "name": "Peshwarain",
     "location": "Jatrabari",
     "city": "Dhaka"
+  },
+  {
+    "id": 14,
+    "bankfullname": "Islamic Bank",
+    "bankshortname": "IB",
+    "cardtype": "Debit",
+    "typeofcard": "Classic",
+    "cardcategory": "Mastercard",
+    "discountdetail": "12% OFF",
+    "discountvalidity": "Month of July/ Eid ul Adha",
+    "specialmesseage": "Your favourite card",
+    "category": "Hotel",  
+    "name": "TakeOut",
+    "location": "Jatrabari",
+    "city": "Dhaka"
   }
 ]

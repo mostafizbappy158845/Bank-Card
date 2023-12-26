@@ -20,6 +20,11 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
           (item) => item.name.toLowerCase().includes(searchInput.toLowerCase())
         )
       }
+      if(searchInput){
+        updatedList = updatedList.filter(
+          (item) => item.location.toLowerCase().includes(searchInput)
+        )
+      }
    // cardtype Filter
     if (cardSelected) {
       updatedList = updatedList.filter(
@@ -86,7 +91,7 @@ const SearchComponent = ({ allInfos, searchInput, selected, filterCards, cardSel
 
 
         </div>
-        <div className="right-section px-4 mt-4 md:mt-0   w-full  md:w-1/4 lg:w-1/6"
+        <div className="right-section px-4 mt-4 md:mt-0   w-full  md:w-1/4 lg:w-1/6 self-start  md:sticky md:top-[260px]"
         data-aos="zoom-in" data-aos-duration="2000"
         >
 

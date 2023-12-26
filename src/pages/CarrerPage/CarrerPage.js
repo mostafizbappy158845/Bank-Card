@@ -22,27 +22,33 @@ const CarrerPage = () => {
                             <p className="text-gray-600 mb-4">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
+                            <Link to="/apply">
                             <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
                                 Apply Now
                             </button>
+                            </Link>
                         </div>
                         <div className="bg-white p-4 rounded-lg shadow-md">
                             <h2 className="text-2xl font-semibold mb-4">Job Opening 2</h2>
                             <p className="text-gray-600 mb-4">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
+                            <Link to="/apply">
                             <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
                                 Apply Now
                             </button>
+                            </Link>
                         </div>
                         <div className="bg-white p-4 rounded-lg shadow-md">
                             <h2 className="text-2xl font-semibold mb-4">Job Opening 3</h2>
                             <p className="text-gray-600 mb-4">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
+                            <Link to="/apply">
                             <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
                                 Apply Now
                             </button>
+                            </Link>
                         </div>
                         <div className="bg-white p-4 rounded-lg shadow-md">
                             <h2 className="text-2xl font-semibold mb-4">Job Opening 4</h2>
@@ -58,9 +64,11 @@ const CarrerPage = () => {
                             <p className="text-gray-600 mb-4">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             </p>
+                            <Link to="/apply">
                             <button className="bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600">
                                 Apply Now
                             </button>
+                            </Link>
                         </div>
                         <div className="bg-white p-4 rounded-lg shadow-md">
                             <h2 className="text-2xl font-semibold mb-4">Job Opening 6</h2>

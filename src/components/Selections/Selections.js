@@ -63,16 +63,16 @@ const Selections = () => {
         // console.log(setActiveCard)
         if (cardSelected === card) {
             setCardSelected(null); // Deselect if already selected
-          } else {
+        } else {
             setCardSelected(card); // Select if not selected
-          }
+        }
     }
 
-    const handleTypeofcardSelected = (card)=>{
-        if(typeofcardSelected === card){
+    const handleTypeofcardSelected = (card) => {
+        if (typeofcardSelected === card) {
             setTypeofcardSelected(null);// Deselect if already selected
         }
-        else{
+        else {
             setTypeofcardSelected(card) // Select if not selected
         }
     }
@@ -87,7 +87,7 @@ const Selections = () => {
         //   }
         setCardcategorySelected(cardcategorySelected === card ? null : card);
 
-        
+
     }
 
 
@@ -104,7 +104,7 @@ const Selections = () => {
 
     return (
         <div>
-            <div className='mx-auto w-full px-4 md:px-10 py-2 md:py-5  bg-slate-200 sticky top-16 z-30'>
+            <div className='mx-auto w-full px-4 md:px-10 py-2 md:py-5  bg-slate-200 md:sticky md:top-[78px] md:z-30'>
                 {/* flex flex-col md:flex-cols-2 lg:flex-row   justify-between items-center */}
                 <div className="wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-items-center content-center  font-normal">
                     <div className='w-52 relative mb-5 cursor-pointer'>
@@ -171,7 +171,7 @@ const Selections = () => {
                                             setCardSelected("")
                                             setSearchInput("")
                                             // scrollToSection('section1')
-                                            window.scrollTo({ top: 810, behavior: "smooth" })
+                                            window.scrollTo({ top: 790, behavior: "smooth" })
 
                                         }}
                                     >
@@ -248,7 +248,8 @@ const Selections = () => {
                                             handleBankSelect(alInfo)
                                             setCardSelected("")
                                             setSearchInput("")
-                                            window.scrollTo({ top: 810, behavior: "smooth" })
+                                            // scrollToSection('section1')
+                                            window.scrollTo({ top: 790, behavior: "smooth" })
                                         }}
                                     >
                                         {alInfo}
@@ -270,22 +271,20 @@ const Selections = () => {
                             onChange={(e) => {
                                 setSearchInput(e.target.value)
                                 setCardSelected(null)
-                                // setActiveCard(null)
                                 setTypeofcardSelected(null)
                                 setCardcategorySelected(null)
                                 setBankname("")
                                 setSelected("")
                                 setSelectedBank(null);
                                 setSelectedCategory(null);
-                                window.scrollTo({ top: 810, behavior: "smooth" })
+                                window.scrollTo({ top: 800, behavior: "smooth" })
                             }}
-                            onFocus={() => {
+                                onFocus={() => {
                                 setOpenBank(false)
                                 setOpenCat(false)
                             }}
                         />
                     </div>
-                    {/* </div> */}
 
                 </div>
                 <div className=''>
@@ -294,17 +293,13 @@ const Selections = () => {
                             {uniqueCardtype.map((card, i) => (
                                 !anySelect ? (
                                     <button disabled key={i}
-                                        //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardSelected(card)}
                                         className={`border-2 rounded-3xl px-6 py-2 ${cardSelected === card ? 'bg-[#64BCC0] text-white cursor-pointer' : 'bg-[#64BCC0]'
                                             } hover:bg-[#5BA9AF]`}>{card}
                                     </button>
                                 ) : (
                                     <button key={i}
-                                        //  onClick={() => setCardSelected(card)}
                                         onClick={() => handleCardSelected(card)}
-                                        // {`border-2 rounded-3xl px-6 py-2 cursor-pointer ${cardSelected === card ? 'bg-[#64BCC0] text-white' : 'bg-[#64BCC0]'
-                                        //     } hover:bg-[#5BA9AF]`}
                                         className={`border rounded-3xl px-6 py-2 cursor-pointer ${cardSelected === card ? 'bg-[#64BCC0] text-white shadow-[0_0_5px_#64BCC0]' : 'bg-[#64BCC0]'
                                             } hover:bg-[#5BA9AF]`}>{card}
                                     </button>
@@ -317,90 +312,79 @@ const Selections = () => {
 
                     </div>
                 </div>
+
                 {/* new card filter section start */}
+
                 <div className='flex items-center flex-col sm:flex-row justify-center   md:gap-10 '>
                     <div className='flex flex-row  items-center md:gap-10 mt-1 justify-center  font-normal'>
-                        {/* <button
-                            className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
-                                             hover:bg-[#6499E9]'>Visa Card</button>
-                        <button className='border-2 rounded-3xl px-6 py-2 cursor-pointer  text-black bg-[#9EDDFF]
-                                             hover:bg-[#6499E9]'>MasterCard</button> */}
-                       {uniqueTypeofcard.map((card, i) => (
-                                !anySelect ? (
-                                    <button disabled key={i}
-                                        //  onClick={() => setCardSelected(card)}
-                                        onClick={() => handleTypeofcardSelected(card)}
-                                        className={` border-2 rounded-3xl px-6 py-2 ${typeofcardSelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#AFDB7F]'
-                                            } hover:bg-[#9CC571]`}>{card}
-                                    </button>
-                                ) : (
-                                    <button key={i}
-                                        //  onClick={() => setCardSelected(card)}
-                                        onClick={() => handleTypeofcardSelected(card)}
-                                        className={`border rounded-3xl px-6 py-2 cursor-pointer ${typeofcardSelected === card ? 'bg-[#AFDB7F] text-white  shadow-[0_0_5px_#AFDB7F]' : 'bg-[#AFDB7F]'
-                                            } hover:bg-[#9CC571]`}>{card}
-                                    </button>
-                                )
+                        
+                        {uniqueTypeofcard.map((card, i) => (
+                            !anySelect ? (
+                                <button disabled key={i}
+                                    onClick={() => handleTypeofcardSelected(card)}
+                                    className={` border-2 rounded-3xl px-6 py-2 ${typeofcardSelected === card ? 'bg-[#6499E9] text-white cursor-pointer' : 'bg-[#AFDB7F]'
+                                        } hover:bg-[#9CC571]`}>{card}
+                                </button>
+                            ) : (
+                                <button key={i}
+                                    onClick={() => handleTypeofcardSelected(card)}
+                                    className={`border rounded-3xl px-6 py-2 cursor-pointer ${typeofcardSelected === card ? 'bg-[#AFDB7F] text-white  shadow-[0_0_5px_#AFDB7F]' : 'bg-[#AFDB7F]'
+                                        } hover:bg-[#9CC571]`}>{card}
+                                </button>
+                            )
 
 
-                            ))}                      
+                        ))}
                     </div>
                     <div className='flex flex-row  items-center mt-1 gap-10 justify-center  font-normal'>
-                    {uniqueCardcategory.map((card, i) => (
-                                !anySelect ? (
-                                    <button disabled key={i}
-                                        //  onClick={() => setCardSelected(card)}
-                                        onClick={() => handleCardCategorySelected(card)}
-                                        className={` border-2 rounded-3xl px-6 py-2 ${cardcategorySelected === card ? 'bg-[#EF7EAD] cursor-pointer' : 'bg-[#EF7EAD]'
-                                            } hover:bg-[#D8729B]`}>{card}
-                                    </button>
-                                ) : (
-                                    <button key={i}
-                                        //  onClick={() => setCardSelected(card)}
-                                        onClick={() => handleCardCategorySelected(card)}
-                                        className={`border rounded-3xl px-6 py-2 cursor-pointer ${cardcategorySelected === card ? 'bg-[#EF7EAD] text-white  shadow-[0_0_5px_#EF7EAD] ' : 'bg-[#EF7EAD]'
-                                            } hover:bg-[#D8729B]`}>{card}
-                                    </button>
-                                )
+                        {uniqueCardcategory.map((card, i) => (
+                            !anySelect ? (
+                                <button disabled key={i}
+                                    onClick={() => handleCardCategorySelected(card)}
+                                    className={` border-2 rounded-3xl px-6 py-2 ${cardcategorySelected === card ? 'bg-[#EF7EAD] cursor-pointer' : 'bg-[#EF7EAD]'
+                                        } hover:bg-[#D8729B]`}>{card}
+                                </button>
+                            ) : (
+                                <button key={i}
+                                    onClick={() => handleCardCategorySelected(card)}
+                                    className={`border rounded-3xl px-6 py-2 cursor-pointer ${cardcategorySelected === card ? 'bg-[#EF7EAD] text-white  shadow-[0_0_5px_#EF7EAD] ' : 'bg-[#EF7EAD]'
+                                        } hover:bg-[#D8729B]`}>{card}
+                                </button>
+                            )
 
 
-                            ))} 
+                        ))}
                     </div>
                 </div>
             </div >
+            
+            < TopBanner></TopBanner >
 
-
-            {/* <Card allCards={allInfos} handleCard = {}></Card> */}
-
-            < TopBanner ></TopBanner >
-
-            {/* {(!isSelectionMade || !anySelect) && <HotOffer />} */}
             {
-                (selectedCategory || selectedBank) && 
-                    // <CategoryComponent
-                    <NewCategory
-                        //   allInfos={filteredData}
-                        allInfos={allInfos}
-                        selected={selected}
-                        bankname={bankname}
-                        cardSelected={cardSelected}
-                        cardcategorySelected={cardcategorySelected}
-                        typeofcardSelected={typeofcardSelected}
-                        anySelect={anySelect}
-                    />
-                
+                (selectedCategory || selectedBank) &&
+                // <CategoryComponent
+                <NewCategory
+                    allInfos={allInfos}
+                    selected={selected}
+                    bankname={bankname}
+                    cardSelected={cardSelected}
+                    cardcategorySelected={cardcategorySelected}
+                    typeofcardSelected={typeofcardSelected}
+                    anySelect={anySelect}
+                />
+
             }
 
             {/* {(selectedCategory || selectedBank) && <CategoryComponent  allInfos={allInfos} selected={selected}  bankname={bankname}  cardSelected={cardSelected} />} */}
             {/* {selectedBank     && <BankComponent     allInfos={allInfos} selected={bankname}       cardSelected={cardSelected}/>} */}
-            {searchInput && 
-            <SearchComponent
-                         allInfos={allInfos} 
-                         searchInput={searchInput} 
-                         cardSelected={cardSelected} 
-                         cardcategorySelected={cardcategorySelected}
-                         typeofcardSelected={typeofcardSelected}
-                         />}
+            {searchInput &&
+                <SearchComponent
+                    allInfos={allInfos}
+                    searchInput={searchInput}
+                    cardSelected={cardSelected}
+                    cardcategorySelected={cardcategorySelected}
+                    typeofcardSelected={typeofcardSelected}
+                />}
 
             {/* {!anySelect && <HotOffer/>} */}
             {!anySelect && <HotOffer />}

@@ -14,10 +14,10 @@ import LoginPage from './pages/LoginPage/LoginPage';
 import SingleAddPage from './pages/SingleAddPage/SingleAddPage';
 import SlidePage from './pages/SlidePage/SlidePage';
 import ApplicationForm from './components/ApplicationForm/ApplicationForm';
-import SignUpPage from './pages/SignUpPage/SignUpPage';
 import Header from './components/Navbar/Header';
 import MainFooter from './components/Footer/MainFooter';
 import { useEffect } from 'react';
+import SignupPage from './pages/SignUpPage/SignUpPage';
 
 function App() {
   const {pathname} = useLocation();
@@ -47,7 +47,7 @@ function App() {
       <Route path='/singleData/:id' element={<SingleAddPage/>}/>
       <Route path='/slide' element={<SlidePage/>}/>
       <Route path='/apply' element={<ApplicationForm/>}/>
-      <Route path='/signup' element={<SignUpPage/>}/>
+      <Route path='/signup' element={<SignupPage/>}/>
       {/* </ScrollToTop> */}
       </Routes>
       
